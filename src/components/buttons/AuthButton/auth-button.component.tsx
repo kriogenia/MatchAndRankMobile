@@ -4,18 +4,20 @@ import {
 	GoogleSignin,
 	GoogleSigninButton,
 	statusCodes,
-	User,
 } from "react-native-google-signin";
 import { webClientId } from "../../../../private.config";
-import { UserContext, UserContextConsumer } from "@hooks";
+import { useTranslation } from "react-i18next";
+import { UserContext } from "@hooks";
 
 type AuthButtonProps = {
 	context: UserContext;
 };
 
 const AuthButton: FunctionComponent<AuthButtonProps> = ({ context }) => {
-	const {userInfo, setUserInfo} = context;
+	const { userInfo, setUserInfo } = context;
 	const [isLogging, setIsLogging] = useState(true);
+
+	const { t } = useTranslation();
 
 	// ComponentDidMount
 	useEffect(() => {
@@ -79,6 +81,7 @@ const AuthButton: FunctionComponent<AuthButtonProps> = ({ context }) => {
 				</View>
 			) : userInfo == null ? (
 				<View style={styles.container}>
+					<Text>{t("LOGIN.anonymous")}</Text>
 					<GoogleSigninButton
 						style={styles.button}
 						size={GoogleSigninButton.Size.Wide}

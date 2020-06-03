@@ -5,7 +5,7 @@ import { UserContextConsumer } from "@hooks/user-info.context";
 const LoginScreen = () => {
 	return (
 		<UserContextConsumer>
-			{context => <AuthButton context={context}/>}
+			{(context) => <AuthButton context={context} />}
 		</UserContextConsumer>
 	);
 };

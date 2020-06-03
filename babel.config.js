@@ -10,6 +10,7 @@ module.exports = {
 					"@components": "./src/components",
 					"@containers": "./src/containers",
 					"@hooks": "./src/hooks",
+					"@rsc": "./src/rsc",
 				},
 			},
 		],
