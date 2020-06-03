@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, FunctionComponent } from "react";
 import { StyleSheet, View, ActivityIndicator, Text } from "react-native";
 import {
 	GoogleSignin,
@@ -7,9 +7,14 @@ import {
 	User,
 } from "react-native-google-signin";
 import { webClientId } from "../../../../private.config";
+import { UserContext, UserContextConsumer } from "@hooks";
 
-const AuthButton = () => {
-	const [userInfo, setUserInfo] = useState<User | undefined>();
+type AuthButtonProps = {
+	context: UserContext;
+};
+
+const AuthButton: FunctionComponent<AuthButtonProps> = ({ context }) => {
+	const {userInfo, setUserInfo} = context;
 	const [isLogging, setIsLogging] = useState(true);
 
 	// ComponentDidMount
@@ -86,7 +91,6 @@ const AuthButton = () => {
 			)}
 		</>
 	);
-
 };
 
 const styles = StyleSheet.create({
