@@ -64,3 +64,4 @@ buck-out/
 
 # Private config files
 private.config.ts
+android/app/google-services.json
