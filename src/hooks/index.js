@@ -1,7 +1,13 @@
 import {
+	UserConsumerProps,
 	UserContext,
 	UserContextConsumer,
 	UserContextProvider,
 } from "./UserContextProvider/user-info.context";
 
-export { UserContext, UserContextConsumer, UserContextProvider };
+export {
+	UserConsumerProps,
+	UserContext,
+	UserContextConsumer,
+	UserContextProvider,
+};

@@ -1,28 +1,28 @@
 import React, { FunctionComponent } from "react";
-import { View, StyleSheet } from "react-native";
+import { View } from "react-native";
 import { DrawerContentScrollView } from "@react-navigation/drawer";
+import { Drawer } from "react-native-paper";
 import { UserContext, UserContextConsumer } from "@hooks";
-import { DarkModeSwitch } from "@components/";
+import { DarkModeSwitch, UserView } from "@components";
+import { styles } from "./settings-screen.styles";
 
 const SettingsScreen: FunctionComponent = () => {
 	return (
 		<DrawerContentScrollView>
-			<View style={styles.preference}>
-				<UserContextConsumer>
-					{(context: UserContext) => <DarkModeSwitch context={context}/>}
-				</UserContextConsumer>
-			</View>
+			<UserContextConsumer>
+				{(context: UserContext) => (
+					<View style={styles.drawerContent}>
+						<UserView context={context}/>
+						<Drawer.Section title="Preferences" style={styles.drawerSection}>
+							<View style={styles.preference}>
+								<DarkModeSwitch context={context} />
+							</View>
+						</Drawer.Section>
+					</View>
+				)}
+			</UserContextConsumer>
 		</DrawerContentScrollView>
 	);
 };
-
-const styles = StyleSheet.create({
-	preference: {
-		flexDirection: "row",
-		justifyContent: "space-between",
-		paddingVertical: 12,
-		paddingHorizontal: 16,
-	},
-});
 
 export default SettingsScreen;

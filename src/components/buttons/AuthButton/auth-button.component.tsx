@@ -7,14 +7,10 @@ import {
 } from "react-native-google-signin";
 import { webClientId } from "../../../../private.config";
 import { useTranslation } from "react-i18next";
-import { UserContext } from "@hooks";
 import { Caption } from "react-native-paper";
+import { UserConsumerProps } from "@hooks";
 
-type AuthButtonProps = {
-	context: UserContext;
-};
-
-const AuthButton: FunctionComponent<AuthButtonProps> = ({ context }) => {
+const AuthButton: FunctionComponent<UserConsumerProps> = ({ context }) => {
 	const { userInfo, setUserInfo } = context;
 	const [isLogging, setIsLogging] = useState(true);
 

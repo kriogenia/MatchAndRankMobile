@@ -4,7 +4,6 @@ import React, {
 	FunctionComponent,
 	Dispatch,
 	SetStateAction,
-	useEffect,
 } from "react";
 import { User } from "react-native-google-signin";
 import { DarkTheme, LightTheme } from "./theme";
@@ -17,6 +16,10 @@ export interface UserContext {
 	currentTheme: Theme;
 	toggleTheme: () => void;
 }
+
+export type UserConsumerProps = {
+	context: UserContext;
+};
 
 const { Provider, Consumer } = createContext<UserContext | undefined>(
 	undefined,
@@ -44,9 +47,7 @@ const UserContextProvider: FunctionComponent = ({ children }) => {
 	return (
 		<Provider value={userContext}>
 			<PaperProvider theme={getTheme()}>
-				<NavigationContainer theme={getTheme()}>
-					{children}
-				</NavigationContainer>
+				<NavigationContainer theme={getTheme()}>{children}</NavigationContainer>
 			</PaperProvider>
 		</Provider>
 	);
