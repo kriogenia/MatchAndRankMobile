@@ -1,26 +1,16 @@
 import React, { FunctionComponent } from "react";
-import { View, StyleSheet, Switch } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { DrawerContentScrollView } from "@react-navigation/drawer";
-import { TouchableRipple, Caption } from "react-native-paper";
+import { UserContext, UserContextConsumer } from "@hooks";
+import { DarkModeSwitch } from "@components/";
 
-type SettingsProps = {
-	isDark: boolean;
-	toggleTheme: () => void;
-};
-
-const SettingsScreen: FunctionComponent<SettingsProps> = ({
-	isDark,
-	toggleTheme,
-}) => {
+const SettingsScreen: FunctionComponent = () => {
 	return (
 		<DrawerContentScrollView>
 			<View style={styles.preference}>
-				<Caption>Dark Theme</Caption>
-				<TouchableRipple onPress={toggleTheme}>
-					<View pointerEvents="none">
-						<Switch value={isDark} />
-					</View>
-				</TouchableRipple>
+				<UserContextConsumer>
+					{(context: UserContext) => <DarkModeSwitch context={context}/>}
+				</UserContextConsumer>
 			</View>
 		</DrawerContentScrollView>
 	);

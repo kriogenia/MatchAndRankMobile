@@ -1,13 +1,7 @@
 import React, { FunctionComponent } from "react";
-import { NavigationContainer, Theme } from "@react-navigation/native";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createStackNavigator } from "@react-navigation/stack";
 import { LoginScreen, SettingsScreen } from "@containers";
-
-type NavigatorProps = {
-	theme: Theme;
-	toggleTheme: () => void;
-};
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -20,19 +14,11 @@ const StackNavigator: FunctionComponent = () => {
 	);
 };
 
-const Navigator: FunctionComponent<NavigatorProps> = ({
-	theme,
-	toggleTheme,
-}) => {
+const Navigator: FunctionComponent = () => {
 	return (
-		<NavigationContainer theme={theme}>
-			<Drawer.Navigator
-				drawerContent={() => (
-					<SettingsScreen toggleTheme={toggleTheme} isDark={theme.dark} />
-				)}>
-				<Drawer.Screen name="Stack" component={StackNavigator} />
-			</Drawer.Navigator>
-		</NavigationContainer>
+		<Drawer.Navigator drawerContent={() => <SettingsScreen />}>
+			<Drawer.Screen name="Stack" component={StackNavigator} />
+		</Drawer.Navigator>
 	);
 };
 
