@@ -18,6 +18,7 @@ const { Provider, Consumer } = createContext<UserContext | undefined>(
 
 const UserContextProvider: FunctionComponent = ({ children }) => {
 	const [user, setUser] = useState<User | undefined>();
+
 	const userContext = {
 		userInfo: user,
 		setUserInfo: setUser,

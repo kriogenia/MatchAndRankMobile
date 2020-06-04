@@ -2,6 +2,6 @@ import {
 	UserContext,
 	UserContextConsumer,
 	UserContextProvider,
-} from "./user-info.context";
+} from "./UserContextProvider/user-info.context";
 
 export { UserContext, UserContextConsumer, UserContextProvider };

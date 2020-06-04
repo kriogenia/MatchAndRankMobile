@@ -1,12 +1,15 @@
 import React from "react";
 import { AuthButton } from "@components";
-import { UserContextConsumer } from "@hooks/user-info.context";
+import { UserContext, UserContextConsumer } from "@hooks";
+import { View } from "react-native";
 
 const LoginScreen = () => {
 	return (
-		<UserContextConsumer>
-			{(context) => <AuthButton context={context} />}
-		</UserContextConsumer>
+		<View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+			<UserContextConsumer>
+				{(context: UserContext) => <AuthButton context={context} />}
+			</UserContextConsumer>
+		</View>
 	);
 };
 

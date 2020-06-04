@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
     "@react-native-firebase/app": "^7.1.4",
+    "@react-navigation/drawer": "^5.8.1",
     "@react-navigation/native": "^5.5.0",
     "@react-navigation/stack": "^5.4.1",
     "i18next": "^19.4.5",
@@ -34,7 +35,7 @@
     "@babel/runtime": "^7.6.2",
     "@react-native-community/eslint-config": "^1.0.0",
     "@types/jest": "^24.0.24",
-    "@types/react-native": "^0.62.0",
+    "@types/react-native": "^0.62.12",
     "@types/react-test-renderer": "16.9.2",
     "@typescript-eslint/eslint-plugin": "^2.27.0",
     "@typescript-eslint/parser": "^2.27.0",

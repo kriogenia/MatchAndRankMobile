@@ -8,6 +8,7 @@ import {
 import { webClientId } from "../../../../private.config";
 import { useTranslation } from "react-i18next";
 import { UserContext } from "@hooks";
+import { Caption } from "react-native-paper";
 
 type AuthButtonProps = {
 	context: UserContext;
@@ -90,7 +91,9 @@ const AuthButton: FunctionComponent<AuthButtonProps> = ({ context }) => {
 					/>
 				</View>
 			) : (
-				<Text>{userInfo.user.email}</Text>
+				<View style={styles.container}>
+					<Caption>{userInfo.user.email}</Caption>
+				</View>
 			)}
 		</>
 	);
@@ -99,7 +102,6 @@ const AuthButton: FunctionComponent<AuthButtonProps> = ({ context }) => {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: "#fff",
 		alignItems: "center",
 		justifyContent: "center",
 	},
