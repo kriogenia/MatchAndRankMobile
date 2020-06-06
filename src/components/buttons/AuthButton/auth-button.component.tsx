@@ -1,5 +1,5 @@
 import React, { useState, useEffect, FunctionComponent } from "react";
-import { StyleSheet, View, ActivityIndicator, Text } from "react-native";
+import { View, ActivityIndicator, Text } from "react-native";
 import {
 	GoogleSignin,
 	GoogleSigninButton,
@@ -7,8 +7,8 @@ import {
 } from "react-native-google-signin";
 import { webClientId } from "../../../../private.config";
 import { useTranslation } from "react-i18next";
-import { Caption } from "react-native-paper";
-import { UserConsumerProps } from "@hooks";
+import { UserConsumerProps } from "@hooks/index";
+import { styles } from "./auth-button.style";
 
 const AuthButton: FunctionComponent<UserConsumerProps> = ({ context }) => {
 	const { userInfo, setUserInfo } = context;
@@ -36,7 +36,7 @@ const AuthButton: FunctionComponent<UserConsumerProps> = ({ context }) => {
 	const getCurrentUserInfo = async () => {
 		try {
 			const _userInfo = await GoogleSignin.signInSilently();
-			setUserInfo(_userInfo);
+			setUserInfo ? setUserInfo(_userInfo) : null;
 		} catch (error) {
 			if (error.code === statusCodes.SIGN_IN_REQUIRED) {
 				console.log("User has not signed in yet");
@@ -54,7 +54,7 @@ const AuthButton: FunctionComponent<UserConsumerProps> = ({ context }) => {
 				showPlayServicesUpdateDialog: true,
 			});
 			const _userInfo = await GoogleSignin.signIn();
-			setUserInfo(_userInfo);
+			setUserInfo ? setUserInfo(_userInfo) : null;
 		} catch (error) {
 			if (error.code === statusCodes.SIGN_IN_CANCELLED) {
 				console.log("User cancelled the login flow");
@@ -76,43 +76,22 @@ const AuthButton: FunctionComponent<UserConsumerProps> = ({ context }) => {
 				<View style={styles.container}>
 					<ActivityIndicator size="large" color="#0000ff" />
 				</View>
-			) : userInfo == null ? (
-				<View style={styles.container}>
-					<Text>{t("LOGIN.anonymous")}</Text>
-					<GoogleSigninButton
-						style={styles.button}
-						size={GoogleSigninButton.Size.Wide}
-						color={GoogleSigninButton.Color.Dark}
-						onPress={signIn}
-					/>
-				</View>
 			) : (
-				<View style={styles.container}>
-					<Caption>{userInfo.user.email}</Caption>
-				</View>
+				!userInfo && (
+					<View style={styles.container}>
+						<Text>{t("LOGIN.anonymous")}</Text>
+						<GoogleSigninButton
+							style={styles.button}
+							size={GoogleSigninButton.Size.Wide}
+							color={GoogleSigninButton.Color.Dark}
+							onPress={signIn}
+							disabled={isLogging}
+						/>
+					</View>
+				)
 			)}
 		</>
 	);
 };
-
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		alignItems: "center",
-		justifyContent: "center",
-	},
-	imageStyle: {
-		width: 200,
-		height: 300,
-		resizeMode: "contain",
-	},
-	button: {
-		alignItems: "center",
-		backgroundColor: "#DDDDDD",
-		padding: 10,
-		width: 300,
-		marginTop: 30,
-	},
-});
 
 export default AuthButton;

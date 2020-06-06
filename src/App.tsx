@@ -1,6 +1,6 @@
 import "react-native-gesture-handler";
 import React from "react";
-import { UserContextProvider } from "@hooks";
+import { UserContextProvider } from "@hooks/index";
 import Navigator from "./navigator";
 
 const App = () => {

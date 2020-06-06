@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { Caption, TouchableRipple, Switch } from "react-native-paper";
 import { View } from "react-native";
-import { UserContext } from "@hooks";
+import { UserContext } from "@hooks/index";
 
 type DarkModeSwitchProps = {
 	context: UserContext;

@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import { createStackNavigator } from "@react-navigation/stack";
-import { LoginScreen, SettingsScreen } from "@containers";
+import { LoginScreen, SettingsScreen } from "@containers/index";
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
