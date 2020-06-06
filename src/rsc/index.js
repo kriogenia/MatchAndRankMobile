@@ -1,3 +1,3 @@
-import { en } from "./locale";
+import { en, es, gl } from "./locale";
 
-export { en };
+export { en, es, gl };

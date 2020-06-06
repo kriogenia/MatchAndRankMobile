@@ -1,5 +1,15 @@
 {
+	"LANGUAGE": {
+		"en": "English",
+		"es": "Spanish",
+		"gl": "Galician"
+	},
 	"LOGIN": {
 		"anonymous": "Keep anonymous"
+	},
+	"SETTINGS": {
+		"change_language": "Change language",
+		"dark_mode": "Dark Mode",
+		"preferences": "Preferences"
 	}
 }

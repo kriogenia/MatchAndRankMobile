@@ -9,8 +9,7 @@ export const styles = StyleSheet.create({
 	},
 	preference: {
 		flexDirection: "row",
-		justifyContent: "space-between",
-		paddingVertical: 12,
+		paddingVertical: 4,
 		paddingHorizontal: 16,
 	},
 });

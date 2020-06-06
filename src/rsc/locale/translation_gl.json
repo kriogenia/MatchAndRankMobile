@@ -1,0 +1,13 @@
+{
+	"LANGUAGE": {
+		"en": "Inglés",
+		"es": "Español",
+		"gl": "Galego"
+	},
+	"LOGIN": {
+		"anonymous": "Seguir anónimamente"
+	},
+	"SETTINGS": {
+		"change_language": "Cambiar lingua"
+	}
+}

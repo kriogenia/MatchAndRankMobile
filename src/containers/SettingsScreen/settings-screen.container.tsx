@@ -8,10 +8,14 @@ import {
 	LogoutButton,
 	UserView,
 	AuthButton,
+	LanguageSelector,
 } from "@components/index";
 import { styles } from "./settings-screen.styles";
+import { useTranslation } from "react-i18next";
 
 const SettingsScreen: FunctionComponent = () => {
+	const { t } = useTranslation();
+
 	return (
 		<DrawerContentScrollView>
 			<UserContextConsumer>
@@ -19,9 +23,14 @@ const SettingsScreen: FunctionComponent = () => {
 					context && (
 						<View style={styles.drawerContent}>
 							<UserView context={context} />
-							<Drawer.Section title="Preferences" style={styles.drawerSection}>
+							<Drawer.Section
+								title={t("SETTINGS.preferences")}
+								style={styles.drawerSection}>
 								<View style={styles.preference}>
 									<DarkModeSwitch context={context} />
+								</View>
+								<View style={styles.preference}>
+									<LanguageSelector context={context} />
 								</View>
 							</Drawer.Section>
 							{context.userInfo ? (

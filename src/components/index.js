@@ -1,5 +1,5 @@
 import { AuthButton, LogoutButton } from "./buttons";
-import { DarkModeSwitch } from "./switches";
+import { DarkModeSwitch, LanguageSelector } from "./switches";
 import { UserView } from "./views";
 
-export { AuthButton, LogoutButton, DarkModeSwitch, UserView };
+export { AuthButton, LogoutButton, DarkModeSwitch, LanguageSelector, UserView };
