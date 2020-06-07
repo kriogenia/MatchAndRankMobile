@@ -22,7 +22,7 @@ const SettingsScreen: FunctionComponent = () => {
 				{(context: UserContext | undefined) =>
 					context && (
 						<View style={styles.drawerContent}>
-							<UserView context={context} />
+							{context.userInfo && <UserView context={context} />}
 							<Drawer.Section
 								title={t("SETTINGS.preferences")}
 								style={styles.drawerSection}>
@@ -30,7 +30,7 @@ const SettingsScreen: FunctionComponent = () => {
 									<DarkModeSwitch context={context} />
 								</View>
 								<View style={styles.preference}>
-									<LanguageSelector context={context} />
+									<LanguageSelector />
 								</View>
 							</Drawer.Section>
 							{context.userInfo ? (

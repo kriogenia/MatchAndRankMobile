@@ -1,5 +1,5 @@
 import React, { useState, useEffect, FunctionComponent } from "react";
-import { View, ActivityIndicator, Text } from "react-native";
+import { View, ActivityIndicator } from "react-native";
 import {
 	GoogleSignin,
 	GoogleSigninButton,
@@ -9,6 +9,7 @@ import { webClientId } from "../../../../private.config";
 import { useTranslation } from "react-i18next";
 import { UserConsumerProps } from "@hooks/index";
 import { styles } from "./auth-button.style";
+import { Caption } from "react-native-paper";
 
 const AuthButton: FunctionComponent<UserConsumerProps> = ({ context }) => {
 	const { userInfo, setUserInfo } = context;
@@ -79,7 +80,7 @@ const AuthButton: FunctionComponent<UserConsumerProps> = ({ context }) => {
 			) : (
 				!userInfo && (
 					<View style={styles.container}>
-						<Text>{t("LOGIN.anonymous")}</Text>
+						<Caption>{t("LOGIN.identify_yourself")}</Caption>
 						<GoogleSigninButton
 							style={styles.button}
 							size={GoogleSigninButton.Size.Wide}

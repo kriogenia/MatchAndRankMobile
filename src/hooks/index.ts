@@ -5,9 +5,5 @@ import {
 	UserContextProvider,
 } from "./UserContextProvider/user-info.context";
 
-export {
-	UserConsumerProps,
-	UserContext,
-	UserContextConsumer,
-	UserContextProvider,
-};
+export { UserContextConsumer, UserContextProvider };
+export type { UserConsumerProps, UserContext };

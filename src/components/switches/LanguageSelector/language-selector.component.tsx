@@ -1,20 +1,17 @@
 import React, { FunctionComponent, useState } from "react";
-import { Menu, TouchableRipple, Caption } from "react-native-paper";
+import { Menu, TouchableRipple, Caption, useTheme } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 import i18n from "../../../i18n";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
-import { UserConsumerProps } from "@hooks/index";
 import { View } from "react-native";
 import { styles } from "./language-selector.styles";
 
 const languages = ["en", "es", "gl"];
 
-const LanguageSelector: FunctionComponent<UserConsumerProps> = ({
-	context,
-}) => {
+const LanguageSelector: FunctionComponent = () => {
 	const [isVisible, setIsVisible] = useState(false);
 
-	const { currentTheme } = context;
+	const { colors } = useTheme();
 	const { t } = useTranslation();
 
 	const handleToggle = (): void => {
@@ -35,7 +32,7 @@ const LanguageSelector: FunctionComponent<UserConsumerProps> = ({
 					<MaterialCommunityIcons
 						name="earth"
 						size={20}
-						color={currentTheme.colors.text}
+						color={colors.text}
 						style={styles.item}
 					/>
 					<TouchableRipple onPress={handleToggle} style={styles.takeAll}>

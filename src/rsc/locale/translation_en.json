@@ -5,11 +5,16 @@
 		"gl": "Galician"
 	},
 	"LOGIN": {
-		"anonymous": "Keep anonymous"
+		"identify_yourself": "You must be logged in to use the application"
 	},
 	"SETTINGS": {
 		"change_language": "Change language",
 		"dark_mode": "Dark Mode",
 		"preferences": "Preferences"
+	},
+	"START": {
+		"clear": "Clear",
+		"import": "Import",
+		"template": "Template"
 	}
 }
