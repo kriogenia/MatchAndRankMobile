@@ -1,4 +1,12 @@
 {
+	"ERROR": {
+		"alert": "Alert",
+		"cancel": "Cancel",
+		"close": "Close",
+		"confirm_clear": "This will clear the whole list, are you sure?",
+		"duplicated_entry": "Entries can't be repeated",
+		"ok": "Ok"
+	},
 	"LANGUAGE": {
 		"en": "English",
 		"es": "Spanish",
@@ -15,6 +23,6 @@
 	"START": {
 		"clear": "Clear",
 		"import": "Import",
-		"template": "Template"
+		"template": "Template",
 	}
 }
