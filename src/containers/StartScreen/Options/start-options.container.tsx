@@ -1,7 +1,8 @@
 import React, { Dispatch, FunctionComponent } from "react";
 import { View } from "react-native";
-import { ClearButton, ImportButton, TemplateButton } from "@components/index";
+import { ClearButton, ImportButton, LoadButton } from "@components/index";
 import { styles } from "./start-options.styles";
+import { Surface } from "react-native-paper";
 
 type StartOptionsProps = {
 	setList: Dispatch<React.SetStateAction<string[]>>;
@@ -9,11 +10,11 @@ type StartOptionsProps = {
 
 const StartOptions: FunctionComponent<StartOptionsProps> = ({ setList }) => {
 	return (
-		<View style={styles.layout}>
+		<Surface style={styles.layout}>
 			<ImportButton />
-			<TemplateButton />
+			<LoadButton />
 			<ClearButton setList={setList} />
-		</View>
+		</Surface>
 	);
 };
 

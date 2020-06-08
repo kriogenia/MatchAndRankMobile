@@ -12,7 +12,7 @@ const Stack = createStackNavigator<StackParamList>();
 
 const StackNavigator: FunctionComponent = () => {
 	return (
-		<Stack.Navigator>
+		<Stack.Navigator initialRouteName="Start" headerMode="none">
 			<Stack.Screen name="Start" component={StartScreen} />
 		</Stack.Navigator>
 	);

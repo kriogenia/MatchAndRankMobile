@@ -5,7 +5,7 @@ import StartOptions from "./Options/start-options.container";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { StackParamList } from "navigator";
 import { UserContextConsumer, UserContext } from "@hooks/index";
-import { AuthButton, EntriesList, AlertDialog } from "@components/index";
+import { AuthButton, EntriesList, AlertDialog, SystemPicker } from "@components/index";
 
 let backuplist: string[] = [];
 let backupsystem: string = "s";
@@ -21,7 +21,7 @@ const StartScreen: FunctionComponent<StartScreenProps> = ({}) => {
 
 	useEffect(() => {
 		backuplist = [...list];
-		//backupsystem = system;
+		backupsystem = system;
 	}, [list, system]);
 
 	return (
@@ -33,8 +33,8 @@ const StartScreen: FunctionComponent<StartScreenProps> = ({}) => {
 						<>
 							<StartOptions setList={setList} />
 							<EntriesList list={list} setList={setList} alert={setAlertText} />
-						{/*	<SystemPicker setSystem={setSystem} />
-						<StartButton list={list} systemCode={system} navigation={navigation}/> */}
+							<SystemPicker setSystem={setSystem} />
+						{/*	<StartButton list={list} systemCode={system} navigation={navigation}/> */}
 						</>
 					) : (
 						<AuthButton context={context} />

@@ -3,11 +3,11 @@ import {
 	ClearButton,
 	ImportButton,
 	LogoutButton,
-	TemplateButton,
+	LoadButton,
 } from "./buttons";
 import { AlertDialog, ConfirmDialog } from "./dialogs";
 import { EntriesList } from "./lists";
-import { DarkModeSwitch, LanguageSelector } from "./switches";
+import { DarkModeSwitch, LanguageSelector, SystemPicker } from "./switches";
 import { UserView } from "./views";
 
 export {
@@ -19,7 +19,8 @@ export {
 	EntriesList,
 	ImportButton,
 	LanguageSelector,
+	LoadButton,
 	LogoutButton,
-	TemplateButton,
+	SystemPicker,
 	UserView,
 };

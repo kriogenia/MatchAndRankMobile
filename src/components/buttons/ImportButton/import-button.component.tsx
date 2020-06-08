@@ -5,7 +5,7 @@ import { useTranslation } from "react-i18next";
 const ImportButton: FunctionComponent = () => {
 	const { t } = useTranslation();
 
-	return <Button mode="contained">{t("START.import")}</Button>;
+	return <Button icon="upload" mode="contained">{t("START.import")}</Button>;
 };
 
 export default ImportButton;

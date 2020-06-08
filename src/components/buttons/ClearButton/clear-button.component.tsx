@@ -33,7 +33,7 @@ const ClearButton: FunctionComponent<ClearButtonProps> = ({ setList }) => {
 				isVisible={dialogOpen}
 				text={t("ERROR.confirm_clear")}
 			/>
-			<Button onPress={openDialog} mode="contained">
+			<Button icon="delete-sweep" onPress={openDialog} mode="contained">
 				{t("START.clear")}
 			</Button>
 		</>

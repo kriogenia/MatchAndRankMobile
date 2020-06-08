@@ -23,6 +23,11 @@
 	"START": {
 		"clear": "Clear",
 		"import": "Import",
-		"template": "Template",
+		"load": "Load",
+		"options": {
+			"allow_draw": "Allow draws",
+			"free4all": "Free4All",
+			"quick": "Quick"
+		}
 	}
 }

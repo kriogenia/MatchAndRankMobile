@@ -4,6 +4,7 @@ export const styles = StyleSheet.create({
 	layout: {
 		flexDirection: "row",
 		justifyContent: "space-between",
-		margin: 10,
+		padding: 5,
+		marginBottom: 5,
 	},
 });

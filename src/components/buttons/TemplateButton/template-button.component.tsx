@@ -2,10 +2,10 @@ import React, { FunctionComponent } from "react";
 import { Button } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 
-const TemplateButton: FunctionComponent = () => {
+const LoadButton: FunctionComponent = () => {
 	const { t } = useTranslation();
 
-	return <Button mode="contained">{t("START.template")}</Button>;
+	return <Button icon="cloud-download-outline" mode="contained">{t("START.load")}</Button>;
 };
 
-export default TemplateButton;
+export default LoadButton;
