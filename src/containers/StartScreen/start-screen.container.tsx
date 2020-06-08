@@ -5,7 +5,13 @@ import StartOptions from "./Options/start-options.container";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { StackParamList } from "navigator";
 import { UserContextConsumer, UserContext } from "@hooks/index";
-import { AuthButton, EntriesList, AlertDialog, SystemPicker } from "@components/index";
+import {
+	AuthButton,
+	EntriesList,
+	AlertDialog,
+	SystemPicker,
+	NextButton,
+} from "@components/index";
 
 let backuplist: string[] = [];
 let backupsystem: string = "s";
@@ -18,6 +24,7 @@ const StartScreen: FunctionComponent<StartScreenProps> = ({}) => {
 	const [list, setList] = useState(backuplist);
 	const [system, setSystem] = useState(backupsystem);
 	const [alertText, setAlertText] = useState("");
+	const [showSystem, setShowSystem] = useState(false);
 
 	useEffect(() => {
 		backuplist = [...list];
@@ -33,8 +40,14 @@ const StartScreen: FunctionComponent<StartScreenProps> = ({}) => {
 						<>
 							<StartOptions setList={setList} />
 							<EntriesList list={list} setList={setList} alert={setAlertText} />
-							<SystemPicker setSystem={setSystem} />
-						{/*	<StartButton list={list} systemCode={system} navigation={navigation}/> */}
+							{showSystem && <SystemPicker setSystem={setSystem} />}
+							{showSystem ? null : (
+								<NextButton
+									condition={list.length < 3}
+									onPress={() => setShowSystem(true)}
+								/>
+							)}
+							{/*	<StartButton list={list} systemCode={system} navigation={navigation}/> */}
 						</>
 					) : (
 						<AuthButton context={context} />

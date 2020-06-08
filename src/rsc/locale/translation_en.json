@@ -1,11 +1,15 @@
 {
-	"ERROR": {
+	"COMMON": {
 		"alert": "Alert",
 		"cancel": "Cancel",
 		"close": "Close",
+		"next": "Next",
+		"ok": "Ok"
+	},
+	"ERROR": {
 		"confirm_clear": "This will clear the whole list, are you sure?",
 		"duplicated_entry": "Entries can't be repeated",
-		"ok": "Ok"
+		"minimum_entries": "You need at least three entries to start"
 	},
 	"LANGUAGE": {
 		"en": "English",
