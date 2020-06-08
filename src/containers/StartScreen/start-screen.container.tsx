@@ -8,7 +8,7 @@ import { UserContextConsumer, UserContext } from "@hooks/index";
 import { AuthButton, EntriesList, AlertDialog } from "@components/index";
 
 let backuplist: string[] = [];
-//let backupsystem: string = "s";
+let backupsystem: string = "s";
 
 type StartScreenProps = {
 	navigation: StackNavigationProp<StackParamList, "Start">;
@@ -16,13 +16,13 @@ type StartScreenProps = {
 
 const StartScreen: FunctionComponent<StartScreenProps> = ({}) => {
 	const [list, setList] = useState(backuplist);
-	//const [system, setSystem] = useState(backupsystem);
+	const [system, setSystem] = useState(backupsystem);
 	const [alertText, setAlertText] = useState("");
 
 	useEffect(() => {
 		backuplist = [...list];
 		//backupsystem = system;
-	}, [list /*, system*/]);
+	}, [list, system]);
 
 	return (
 		<View style={styles.layout}>
@@ -33,10 +33,10 @@ const StartScreen: FunctionComponent<StartScreenProps> = ({}) => {
 						<>
 							<StartOptions setList={setList} />
 							<EntriesList list={list} setList={setList} alert={setAlertText} />
+						{/*	<SystemPicker setSystem={setSystem} />
+						<StartButton list={list} systemCode={system} navigation={navigation}/> */}
 						</>
 					) : (
-						/*	<SystemPicker setSystem={setSystem} />
-						<StartButton list={list} systemCode={system} navigation={navigation}/> */
 						<AuthButton context={context} />
 					))
 				}
