@@ -9,7 +9,8 @@
 	"ERROR": {
 		"confirm_clear": "This will clear the whole list, are you sure?",
 		"duplicated_entry": "Entries can't be repeated",
-		"minimum_entries": "You need at least three entries to start"
+		"minimum_entries": "You need at least three entries to start",
+		"save_file_name": "Specify a name for the list"
 	},
 	"LANGUAGE": {
 		"en": "English",
@@ -25,6 +26,7 @@
 		"preferences": "Preferences"
 	},
 	"START": {
+		"add": "Add",
 		"clear": "Clear",
 		"expected_matches": "Expected matches: ",
 		"import": "Import",
@@ -34,6 +36,8 @@
 			"free4all": "Free4All",
 			"quick": "Quick"
 		},
+		"save_as": "Save as",
+		"save_list": "Save list",
 		"start": "Start"
 	}
 }

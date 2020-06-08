@@ -9,7 +9,4 @@ export const styles = StyleSheet.create({
 	item: {
 		marginRight: 5,
 	},
-	takeAll: {
-		width: "100%",
-	},
 });

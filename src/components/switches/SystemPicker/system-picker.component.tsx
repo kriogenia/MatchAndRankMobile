@@ -1,6 +1,12 @@
 import React, { FunctionComponent, useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { Surface, Button, Caption, TouchableRipple, Switch } from "react-native-paper";
+import {
+	Surface,
+	Button,
+	Caption,
+	TouchableRipple,
+	Switch,
+} from "react-native-paper";
 import { View } from "react-native";
 import { styles } from "./system-picker.style";
 

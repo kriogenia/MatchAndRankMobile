@@ -8,19 +8,25 @@ import { styles } from "./start-button.style";
 
 type StartButtonProps = {
 	list: string[];
-	systemCode: string;
 	navigation: StackNavigationProp<StackParamList, "Start">;
+	saveAs: string | undefined;
+	systemCode: string;
 };
 
 const StartButton: FunctionComponent<StartButtonProps> = ({
 	list,
-	systemCode,
 	navigation,
+	saveAs,
+	systemCode,
 }) => {
 	const system = systemFactory(systemCode, list);
 	const { t } = useTranslation();
 
 	const goToMatch = () => {
+		if (saveAs !== undefined && saveAs.length !== 0) {
+			console.log("SAVE LIST AS: " + saveAs);
+			//TODO
+		}
 		navigation.navigate("Start");
 	};
 
@@ -33,7 +39,10 @@ const StartButton: FunctionComponent<StartButtonProps> = ({
 					</Caption>
 				</Surface>
 			)}
-			<Button mode="contained" onPress={goToMatch}>
+			<Button
+				mode="contained"
+				onPress={goToMatch}
+				disabled={saveAs !== undefined && saveAs.length === 0}>
 				{t("START.start")}
 			</Button>
 		</>

@@ -9,7 +9,12 @@ import {
 } from "./buttons";
 import { AlertDialog, ConfirmDialog } from "./dialogs";
 import { EntriesList } from "./lists";
-import { DarkModeSwitch, LanguageSelector, SystemPicker } from "./switches";
+import {
+	DarkModeSwitch,
+	LanguageSelector,
+	SystemPicker,
+	ListSaver,
+} from "./switches";
 import { UserView } from "./views";
 
 export {
@@ -21,6 +26,7 @@ export {
 	EntriesList,
 	ImportButton,
 	LanguageSelector,
+	ListSaver,
 	LoadButton,
 	LogoutButton,
 	NextButton,

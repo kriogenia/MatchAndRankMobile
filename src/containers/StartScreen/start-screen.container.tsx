@@ -12,6 +12,7 @@ import {
 	SystemPicker,
 	NextButton,
 	StartButton,
+	ListSaver,
 } from "@components/index";
 
 let backuplist: string[] = [];
@@ -21,11 +22,12 @@ type StartScreenProps = {
 	navigation: StackNavigationProp<StackParamList, "Start">;
 };
 
-const StartScreen: FunctionComponent<StartScreenProps> = ({navigation}) => {
+const StartScreen: FunctionComponent<StartScreenProps> = ({ navigation }) => {
 	const [list, setList] = useState(backuplist);
 	const [system, setSystem] = useState(backupsystem);
 	const [alertText, setAlertText] = useState("");
 	const [showSystem, setShowSystem] = useState(false);
+	const [saveAs, setSaveAs] = useState<string | undefined>(undefined);
 
 	useEffect(() => {
 		backuplist = [...list];
@@ -42,11 +44,15 @@ const StartScreen: FunctionComponent<StartScreenProps> = ({navigation}) => {
 							<StartOptions setList={setList} />
 							<EntriesList list={list} setList={setList} alert={setAlertText} />
 							{showSystem && <SystemPicker setSystem={setSystem} />}
+							{showSystem && (
+								<ListSaver saveAs={saveAs} setSaveAs={setSaveAs} />
+							)}
 							{showSystem ? (
 								<StartButton
 									list={list}
 									systemCode={system}
 									navigation={navigation}
+									saveAs={saveAs}
 								/>
 							) : (
 								<NextButton

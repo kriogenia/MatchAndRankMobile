@@ -48,7 +48,7 @@ const EntriesList: FunctionComponent<EntriesListProps> = ({
 			<View style={styles.layout}>
 				<TextInput
 					dense
-					label="Add"
+					label={t("START.add")}
 					onChangeText={handleChange}
 					onSubmitEditing={handleAdd}
 					style={styles.textfield}

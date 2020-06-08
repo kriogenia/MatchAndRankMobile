@@ -12,7 +12,7 @@ export class Entry implements IEntry {
 		this.won = [];
 	}
 
-	findOpponent(list:IEntry[]) {
+	findOpponent(list: IEntry[]) {
 		for (let i = 0; i < list.length; i++) {
 			if (!this.clashed.includes(list[i].name)) {
 				return i;
@@ -21,7 +21,7 @@ export class Entry implements IEntry {
 		return -1;
 	}
 
-	getWins(list:IEntry[]) {
+	getWins(list: IEntry[]) {
 		return list.reduce((x, y) => (this.won.includes(y.name) ? x + 1 : x), 0);
 	}
 }

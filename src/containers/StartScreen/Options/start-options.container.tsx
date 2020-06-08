@@ -1,5 +1,4 @@
 import React, { Dispatch, FunctionComponent } from "react";
-import { View } from "react-native";
 import { ClearButton, ImportButton, LoadButton } from "@components/index";
 import { styles } from "./start-options.styles";
 import { Surface } from "react-native-paper";
