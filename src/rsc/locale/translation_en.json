@@ -26,12 +26,14 @@
 	},
 	"START": {
 		"clear": "Clear",
+		"expected_matches": "Expected matches: ",
 		"import": "Import",
 		"load": "Load",
 		"options": {
 			"allow_draw": "Allow draws",
 			"free4all": "Free4All",
 			"quick": "Quick"
-		}
+		},
+		"start": "Start"
 	}
 }

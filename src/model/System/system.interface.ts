@@ -8,6 +8,7 @@ export interface Match {
 
 export interface System {
 	nextMatch(): Match | null;
+	getExpectedMatches(): number;
 	voteLeft(): void;
 	voteRight(): void;
 	getResults(): IEntry[];

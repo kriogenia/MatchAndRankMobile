@@ -5,6 +5,7 @@ import {
 	LogoutButton,
 	LoadButton,
 	NextButton,
+	StartButton,
 } from "./buttons";
 import { AlertDialog, ConfirmDialog } from "./dialogs";
 import { EntriesList } from "./lists";
@@ -23,6 +24,7 @@ export {
 	LoadButton,
 	LogoutButton,
 	NextButton,
+	StartButton,
 	SystemPicker,
 	UserView,
 };

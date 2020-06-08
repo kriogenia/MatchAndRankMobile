@@ -20,13 +20,13 @@ const ConfirmDialog: FunctionComponent<ConfirmDialogProps> = ({
 	return (
 		<Portal>
 			<Dialog visible={isVisible} onDismiss={onDismiss}>
-				<Dialog.Title>{t("ERROR.alert")}</Dialog.Title>
+				<Dialog.Title>{t("COMMON.alert")}</Dialog.Title>
 				<Dialog.Content>
 					<Paragraph>{text}</Paragraph>
 				</Dialog.Content>
 				<Dialog.Actions>
-					<Button onPress={onConfirm}>{t("ERROR.ok")}</Button>
-					<Button onPress={onDismiss}>{t("ERROR.cancel")}</Button>
+					<Button onPress={onConfirm}>{t("COMMON.ok")}</Button>
+					<Button onPress={onDismiss}>{t("COMMON.cancel")}</Button>
 				</Dialog.Actions>
 			</Dialog>
 		</Portal>

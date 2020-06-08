@@ -4,5 +4,14 @@ import ImportButton from "./ImportButton/import-button.component";
 import LoadButton from "./LoadButton/load-button.component";
 import LogoutButton from "./LogoutButton/logout-button.component";
 import NextButton from "./NextButton/next-button.component";
+import StartButton from "./StartButton/start-button.component";
 
-export { AuthButton, ClearButton, ImportButton, LogoutButton, LoadButton, NextButton };
+export {
+	AuthButton,
+	ClearButton,
+	ImportButton,
+	LogoutButton,
+	LoadButton,
+	NextButton,
+	StartButton,
+};

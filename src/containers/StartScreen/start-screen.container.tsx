@@ -11,6 +11,7 @@ import {
 	AlertDialog,
 	SystemPicker,
 	NextButton,
+	StartButton,
 } from "@components/index";
 
 let backuplist: string[] = [];
@@ -20,7 +21,7 @@ type StartScreenProps = {
 	navigation: StackNavigationProp<StackParamList, "Start">;
 };
 
-const StartScreen: FunctionComponent<StartScreenProps> = ({}) => {
+const StartScreen: FunctionComponent<StartScreenProps> = ({navigation}) => {
 	const [list, setList] = useState(backuplist);
 	const [system, setSystem] = useState(backupsystem);
 	const [alertText, setAlertText] = useState("");
@@ -41,13 +42,18 @@ const StartScreen: FunctionComponent<StartScreenProps> = ({}) => {
 							<StartOptions setList={setList} />
 							<EntriesList list={list} setList={setList} alert={setAlertText} />
 							{showSystem && <SystemPicker setSystem={setSystem} />}
-							{showSystem ? null : (
+							{showSystem ? (
+								<StartButton
+									list={list}
+									systemCode={system}
+									navigation={navigation}
+								/>
+							) : (
 								<NextButton
 									condition={list.length < 3}
 									onPress={() => setShowSystem(true)}
 								/>
 							)}
-							{/*	<StartButton list={list} systemCode={system} navigation={navigation}/> */}
 						</>
 					) : (
 						<AuthButton context={context} />
