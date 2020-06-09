@@ -7,7 +7,7 @@ export default class Free4AllSystem implements System {
 	a: Entry | undefined;
 	b: Entry | undefined;
 
-	constructor(list: string[]) {
+	constructor(list: string[], public name?: string) {
 		this.entries = list.map((obj) => new Entry(obj));
 		this.candidates = [...this.entries];
 	}

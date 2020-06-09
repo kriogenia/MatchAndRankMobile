@@ -19,7 +19,7 @@ const StartButton: FunctionComponent<StartButtonProps> = ({
 	saveAs,
 	systemCode,
 }) => {
-	const system = systemFactory(systemCode, list);
+	const system = systemFactory(systemCode, list, saveAs);
 	const { t } = useTranslation();
 
 	const goToMatch = () => {
@@ -27,11 +27,7 @@ const StartButton: FunctionComponent<StartButtonProps> = ({
 			console.log("SAVE LIST AS: " + saveAs);
 			//TODO
 		}
-		if (system == null) {
-			console.error("Unexpected absence of type");
-		} else {
-			navigation.navigate("Match", { system: system });
-		}
+		navigation.navigate("Match", { system: system });
 	};
 
 	return (

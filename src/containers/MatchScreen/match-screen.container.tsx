@@ -60,7 +60,7 @@ const MatchScreen: FunctionComponent<MatchScreenProps> = ({
 				</Title>
 			</View>
 			{currentMatch && <MatchPicker match={currentMatch} vote={vote} />}
-			{!finished && <ProgressBar progress={(counter-1)/expected} />}
+			{!finished && <ProgressBar progress={(counter - 1) / expected} />}
 		</View>
 	);
 };
