@@ -2,8 +2,8 @@ import {
 	AuthButton,
 	ClearButton,
 	ImportButton,
-	LogoutButton,
 	LoadButton,
+	MatchButton,
 	NextButton,
 	StartButton,
 } from "./buttons";
@@ -11,11 +11,11 @@ import { AlertDialog, ConfirmDialog } from "./dialogs";
 import { EntriesList } from "./lists";
 import {
 	DarkModeSwitch,
-	LanguageSelector,
+	LanguagePicker,
 	SystemPicker,
 	ListSaver,
-} from "./switches";
-import { UserView } from "./views";
+} from "./pickers";
+import { MatchPicker, UserView } from "./views";
 
 export {
 	AlertDialog,
@@ -25,10 +25,11 @@ export {
 	DarkModeSwitch,
 	EntriesList,
 	ImportButton,
-	LanguageSelector,
+	LanguagePicker,
 	ListSaver,
 	LoadButton,
-	LogoutButton,
+	MatchButton,
+	MatchPicker,
 	NextButton,
 	StartButton,
 	SystemPicker,

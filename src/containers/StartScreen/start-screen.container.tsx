@@ -1,38 +1,18 @@
-import React, { useEffect, useState, FunctionComponent } from "react";
+import React, { useState, FunctionComponent } from "react";
 import { View } from "react-native";
 import { styles } from "./start-screen.styles";
-import StartOptions from "./Options/start-options.container";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { StackParamList } from "navigator";
 import { UserContextConsumer, UserContext } from "@hooks/index";
-import {
-	AuthButton,
-	EntriesList,
-	AlertDialog,
-	SystemPicker,
-	NextButton,
-	StartButton,
-	ListSaver,
-} from "@components/index";
-
-let backuplist: string[] = [];
-let backupsystem: string = "s";
+import { AuthButton, AlertDialog } from "@components/index";
+import { AuthStartScreen } from "./auth-start-screen.container";
 
 type StartScreenProps = {
 	navigation: StackNavigationProp<StackParamList, "Start">;
 };
 
 const StartScreen: FunctionComponent<StartScreenProps> = ({ navigation }) => {
-	const [list, setList] = useState(backuplist);
-	const [system, setSystem] = useState(backupsystem);
 	const [alertText, setAlertText] = useState("");
-	const [showSystem, setShowSystem] = useState(false);
-	const [saveAs, setSaveAs] = useState<string | undefined>(undefined);
-
-	useEffect(() => {
-		backuplist = [...list];
-		backupsystem = system;
-	}, [list, system]);
 
 	return (
 		<View style={styles.layout}>
@@ -40,27 +20,7 @@ const StartScreen: FunctionComponent<StartScreenProps> = ({ navigation }) => {
 				{(context: UserContext | undefined) =>
 					context &&
 					(context.userInfo ? (
-						<>
-							<StartOptions setList={setList} />
-							<EntriesList list={list} setList={setList} alert={setAlertText} />
-							{showSystem && <SystemPicker setSystem={setSystem} />}
-							{showSystem && (
-								<ListSaver saveAs={saveAs} setSaveAs={setSaveAs} />
-							)}
-							{showSystem ? (
-								<StartButton
-									list={list}
-									systemCode={system}
-									navigation={navigation}
-									saveAs={saveAs}
-								/>
-							) : (
-								<NextButton
-									condition={list.length < 3}
-									onPress={() => setShowSystem(true)}
-								/>
-							)}
-						</>
+						<AuthStartScreen navigation={navigation} setAlert={setAlertText} />
 					) : (
 						<AuthButton context={context} />
 					))

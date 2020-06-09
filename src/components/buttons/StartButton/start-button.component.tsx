@@ -27,7 +27,11 @@ const StartButton: FunctionComponent<StartButtonProps> = ({
 			console.log("SAVE LIST AS: " + saveAs);
 			//TODO
 		}
-		navigation.navigate("Start");
+		if (system == null) {
+			console.error("Unexpected absence of type");
+		} else {
+			navigation.navigate("Match", { system: system });
+		}
 	};
 
 	return (
@@ -42,7 +46,9 @@ const StartButton: FunctionComponent<StartButtonProps> = ({
 			<Button
 				mode="contained"
 				onPress={goToMatch}
-				disabled={saveAs !== undefined && saveAs.length === 0}>
+				disabled={
+					(saveAs !== undefined && saveAs.length === 0) || list.length < 3
+				}>
 				{t("START.start")}
 			</Button>
 		</>

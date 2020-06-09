@@ -4,11 +4,11 @@ import { useTranslation } from "react-i18next";
 import i18n from "../../../i18n";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
 import { View } from "react-native";
-import { styles } from "./language-selector.styles";
+import { styles } from "./language-picker.styles";
 
 const languages = ["en", "es", "gl"];
 
-const LanguageSelector: FunctionComponent = () => {
+const LanguagePicker: FunctionComponent = () => {
 	const [isVisible, setIsVisible] = useState(false);
 
 	const { colors } = useTheme();
@@ -51,4 +51,4 @@ const LanguageSelector: FunctionComponent = () => {
 	);
 };
 
-export default LanguageSelector;
+export default LanguagePicker;

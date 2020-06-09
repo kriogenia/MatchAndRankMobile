@@ -1,6 +1,6 @@
 import DarkModeSwitch from "./DarkModeSwitch/darkmode-switch.component";
-import LanguageSelector from "./LanguageSelector/language-selector.component";
+import LanguagePicker from "./LanguagePicker/language-picker.component";
 import ListSaver from "./ListSaver/list-saver.component";
 import SystemPicker from "./SystemPicker/system-picker.component";
 
-export { DarkModeSwitch, LanguageSelector, ListSaver, SystemPicker };
+export { DarkModeSwitch, LanguagePicker, ListSaver, SystemPicker };

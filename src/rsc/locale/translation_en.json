@@ -20,6 +20,10 @@
 	"LOGIN": {
 		"identify_yourself": "You must be logged in to use the application"
 	},
+	"MATCH": {
+		"finished": "Loading results",
+		"match_counter": "Match #"
+	},
 	"SETTINGS": {
 		"change_language": "Change language",
 		"dark_mode": "Dark Mode",
