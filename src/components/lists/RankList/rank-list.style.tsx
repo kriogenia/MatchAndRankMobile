@@ -8,13 +8,16 @@ export const getStyles = ({ colors }: Theme) => {
 	};
 
 	return StyleSheet.create({
-		oddItem: {
-			...item,
-			backgroundColor: colors.primary,
+		layout: {
+			paddingBottom: 50,
 		},
 		evenItem: {
 			...item,
 			backgroundColor: colors.accent,
+		},
+		oddItem: {
+			...item,
+			backgroundColor: colors.primary,
 		},
 		title: {
 			fontWeight: "bold",

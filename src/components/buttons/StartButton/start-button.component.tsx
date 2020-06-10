@@ -9,7 +9,7 @@ import { styles } from "./start-button.style";
 type StartButtonProps = {
 	list: string[];
 	navigation: StackNavigationProp<StackParamList, "Start">;
-	saveAs: string | undefined;
+	saveAs: string;
 	systemCode: string;
 };
 
@@ -23,7 +23,7 @@ const StartButton: FunctionComponent<StartButtonProps> = ({
 	const { t } = useTranslation();
 
 	const goToMatch = () => {
-		if (saveAs !== undefined && saveAs.length !== 0) {
+		if (saveAs.length !== 0) {
 			console.log("SAVE LIST AS: " + saveAs);
 			//TODO
 		}
@@ -35,16 +35,16 @@ const StartButton: FunctionComponent<StartButtonProps> = ({
 			{system && (
 				<Surface>
 					<Caption style={styles.caption}>
-						{`${t("START.expected_matches")}${system.getExpectedMatches()}`}
+						{list.length < 3
+							? t("ERROR.minimum_entries")
+							: `${t("START.expected_matches")}${system.getExpectedMatches()}`}
 					</Caption>
 				</Surface>
 			)}
 			<Button
 				mode="contained"
 				onPress={goToMatch}
-				disabled={
-					(saveAs !== undefined && saveAs.length === 0) || list.length < 3
-				}>
+				disabled={saveAs.length === 0 || list.length < 3}>
 				{t("START.start")}
 			</Button>
 		</>

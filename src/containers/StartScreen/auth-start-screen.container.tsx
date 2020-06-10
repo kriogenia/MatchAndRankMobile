@@ -7,7 +7,8 @@ import {
 	SystemPicker,
 	NextButton,
 	StartButton,
-	ListSaver,
+	SaveSwitch,
+	NameInput,
 } from "@components/index";
 
 let backuplist: string[] = [];
@@ -25,7 +26,8 @@ export const AuthStartScreen: FunctionComponent<AuthStartScreenProps> = ({
 	const [list, setList] = useState(backuplist);
 	const [system, setSystem] = useState(backupsystem);
 	const [showSystem, setShowSystem] = useState(false);
-	const [saveAs, setSaveAs] = useState<string | undefined>(undefined);
+	const [save, setSave] = useState(false);
+	const [name, setName] = useState("");
 
 	useEffect(() => {
 		backuplist = [...list];
@@ -36,15 +38,18 @@ export const AuthStartScreen: FunctionComponent<AuthStartScreenProps> = ({
 		<>
 			<StartOptions setList={setList} />
 			<EntriesList list={list} setList={setList} alert={setAlert} />
-			{showSystem && <SystemPicker setSystem={setSystem} />}
-			{showSystem && <ListSaver saveAs={saveAs} setSaveAs={setSaveAs} />}
 			{showSystem ? (
-				<StartButton
-					list={list}
-					systemCode={system}
-					navigation={navigation}
-					saveAs={saveAs}
-				/>
+				<>
+					<NameInput name={name} setName={setName} />
+					<SystemPicker setSystem={setSystem} />
+					<SaveSwitch save={save} setSave={setSave} />
+					<StartButton
+						list={list}
+						systemCode={system}
+						navigation={navigation}
+						saveAs={name}
+					/>
+				</>
 			) : (
 				<NextButton
 					condition={list.length < 3}

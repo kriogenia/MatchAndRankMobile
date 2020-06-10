@@ -7,7 +7,7 @@ export interface Match {
 }
 
 export interface System {
-	name?: string;
+	name: string;
 
 	nextMatch(): Match | null;
 	getExpectedMatches(): number;

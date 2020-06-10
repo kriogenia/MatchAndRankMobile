@@ -8,12 +8,13 @@ import {
 	StartButton,
 } from "./buttons";
 import { AlertDialog, ConfirmDialog } from "./dialogs";
+import { NameInput } from "./forms";
 import { EntriesList, RankList } from "./lists";
 import {
 	DarkModeSwitch,
 	LanguagePicker,
 	SystemPicker,
-	ListSaver,
+	SaveSwitch,
 } from "./pickers";
 import { LoadView, MatchPicker, UserView } from "./views";
 
@@ -26,11 +27,12 @@ export {
 	EntriesList,
 	ImportButton,
 	LanguagePicker,
-	ListSaver,
+	SaveSwitch,
 	LoadButton,
 	LoadView,
 	MatchButton,
 	MatchPicker,
+	NameInput,
 	NextButton,
 	RankList,
 	StartButton,

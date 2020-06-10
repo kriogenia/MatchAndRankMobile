@@ -9,16 +9,20 @@ type RankListProps = {
 };
 
 const RankList: FunctionComponent<RankListProps> = ({ results }) => {
-	let counter = -1;
-	const styles = getStyles(useTheme());
+	let counter = 0;
+	const theme = useTheme();
+	const styles = getStyles(theme);
 
 	return (
-		<ScrollView>
+		<ScrollView
+			contentContainerStyle={styles.layout}
+			indicatorStyle={theme.dark ? "white" : "black"}
+			persistentScrollbar={true}>
 			{results.map((entry) => (
 				<List.Item
 					key={entry.name}
 					title={entry.name}
-					style={counter++ % 2 === 0 ? styles.evenItem : styles.oddItem}
+					style={++counter % 2 === 0 ? styles.evenItem : styles.oddItem}
 					titleStyle={styles.title}
 				/>
 			))}

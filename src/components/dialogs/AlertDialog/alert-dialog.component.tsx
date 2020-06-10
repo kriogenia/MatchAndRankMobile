@@ -18,7 +18,7 @@ const AlertDialog: FunctionComponent<AlertDialogProps> = ({
 			visible={alertText.length > 0}
 			onDismiss={() => setAlertText("")}
 			action={{
-				label: t("ERROR.close"),
+				label: t("COMMON.close"),
 				onPress: () => setAlertText(""),
 			}}>
 			{alertText}

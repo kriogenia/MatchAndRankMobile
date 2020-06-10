@@ -35,12 +35,12 @@
 		"expected_matches": "Expected matches: ",
 		"import": "Import",
 		"load": "Load",
+		"name": "Name",
 		"options": {
 			"allow_draw": "Allow draws",
 			"free4all": "Free4All",
 			"quick": "Quick"
 		},
-		"save_as": "Save as",
 		"save_list": "Save list",
 		"start": "Start"
 	}

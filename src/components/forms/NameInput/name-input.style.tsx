@@ -4,10 +4,7 @@ export const styles = StyleSheet.create({
 	layout: {
 		marginTop: 5,
 		marginBottom: 5,
-	},
-	switch: {
-		flexDirection: "row",
-		justifyContent: "center",
+		padding: 5,
 	},
 	textfield_area: {
 		flexDirection: "row",
