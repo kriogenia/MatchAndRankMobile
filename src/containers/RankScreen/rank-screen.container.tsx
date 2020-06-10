@@ -5,6 +5,7 @@ import { RouteProp } from "@react-navigation/native";
 import { View } from "react-native";
 import { Title } from "react-native-paper";
 import { RankList } from "@components/index";
+import { styles } from "./rank-screen.layout";
 
 type RankScreenProps = {
 	navigation: StackNavigationProp<StackParamList, "Rank">;
@@ -19,7 +20,7 @@ const RankScreen: FunctionComponent<RankScreenProps> = ({
 }) => {
 	return (
 		<View>
-			<Title>{system.name}</Title>
+			<Title style={styles.title}>{system.name}</Title>
 			<RankList results={system.getResults()} />
 		</View>
 	);
