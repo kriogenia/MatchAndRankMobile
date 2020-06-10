@@ -8,14 +8,14 @@ import {
 	StartButton,
 } from "./buttons";
 import { AlertDialog, ConfirmDialog } from "./dialogs";
-import { EntriesList } from "./lists";
+import { EntriesList, RankList } from "./lists";
 import {
 	DarkModeSwitch,
 	LanguagePicker,
 	SystemPicker,
 	ListSaver,
 } from "./pickers";
-import { MatchPicker, UserView } from "./views";
+import { LoadView, MatchPicker, UserView } from "./views";
 
 export {
 	AlertDialog,
@@ -28,9 +28,11 @@ export {
 	LanguagePicker,
 	ListSaver,
 	LoadButton,
+	LoadView,
 	MatchButton,
 	MatchPicker,
 	NextButton,
+	RankList,
 	StartButton,
 	SystemPicker,
 	UserView,

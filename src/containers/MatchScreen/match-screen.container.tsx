@@ -39,9 +39,9 @@ const MatchScreen: FunctionComponent<MatchScreenProps> = ({
 
 	useEffect(() => {
 		if (finished) {
-			console.log(system.getResults());
 			console.log("PERSIST RESULTS");
-			navigation.navigate("Start");
+			console.log("DISPLAY AD");
+			navigation.navigate("Rank", { system: system });
 		}
 	}, [finished, navigation, system]);
 
@@ -55,7 +55,7 @@ const MatchScreen: FunctionComponent<MatchScreenProps> = ({
 			<View style={styles.counter}>
 				<Title>
 					{finished
-						? `t("MATCH.finished)`
+						? `${t("MATCH.finished")}`
 						: `${t("MATCH.match_counter")}${counter}`}
 				</Title>
 			</View>

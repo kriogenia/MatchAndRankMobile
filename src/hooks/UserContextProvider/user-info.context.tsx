@@ -9,6 +9,7 @@ import { User } from "react-native-google-signin";
 import { DarkTheme, LightTheme } from "./theme";
 import { Provider as PaperProvider, Theme } from "react-native-paper";
 import { NavigationContainer } from "@react-navigation/native";
+import { LoadView } from "@components/index";
 
 export interface UserContext {
 	userInfo: User | undefined;
@@ -47,7 +48,9 @@ const UserContextProvider: FunctionComponent = ({ children }) => {
 	return (
 		<Provider value={userContext}>
 			<PaperProvider theme={getTheme()}>
-				<NavigationContainer theme={getTheme()}>{children}</NavigationContainer>
+				<NavigationContainer theme={getTheme()} fallback={<LoadView />}>
+					{children}
+				</NavigationContainer>
 			</PaperProvider>
 		</Provider>
 	);

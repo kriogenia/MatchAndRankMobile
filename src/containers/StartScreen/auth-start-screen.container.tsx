@@ -11,7 +11,7 @@ import {
 } from "@components/index";
 
 let backuplist: string[] = [];
-let backupsystem: string = "s";
+let backupsystem: string = "f";
 
 type AuthStartScreenProps = {
 	navigation: StackNavigationProp<StackParamList, "Start">;
