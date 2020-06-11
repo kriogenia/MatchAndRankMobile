@@ -9,6 +9,7 @@ import { styles } from "./start-button.style";
 type StartButtonProps = {
 	list: string[];
 	navigation: StackNavigationProp<StackParamList, "Start">;
+	reset: React.Dispatch<React.SetStateAction<boolean>>;
 	saveAs: string;
 	systemCode: string;
 };
@@ -16,6 +17,7 @@ type StartButtonProps = {
 const StartButton: FunctionComponent<StartButtonProps> = ({
 	list,
 	navigation,
+	reset,
 	saveAs,
 	systemCode,
 }) => {
@@ -28,6 +30,7 @@ const StartButton: FunctionComponent<StartButtonProps> = ({
 			//TODO
 		}
 		navigation.navigate("Match", { system: system });
+		reset(false);
 	};
 
 	return (

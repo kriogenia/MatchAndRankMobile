@@ -24,6 +24,9 @@
 		"finished": "Loading results",
 		"match_counter": "Match #"
 	},
+	"RANK": {
+		"restart": "Restart"
+	},
 	"SETTINGS": {
 		"change_language": "Change language",
 		"dark_mode": "Dark Mode",
