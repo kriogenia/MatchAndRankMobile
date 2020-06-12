@@ -8,7 +8,7 @@ import {
 	RestartButton,
 	StartButton,
 } from "./buttons";
-import { AlertDialog, ConfirmDialog } from "./dialogs";
+import { AlertDialog, ConfirmDialog, CopyDialog } from "./dialogs";
 import { NameInput } from "./forms";
 import { EntriesList, RankList } from "./lists";
 import {
@@ -17,13 +17,14 @@ import {
 	SystemPicker,
 	SaveSwitch,
 } from "./pickers";
-import { LoadView, MatchPicker, UserView } from "./views";
+import { LoadView, MatchPicker, RankHeader, UserView } from "./views";
 
 export {
 	AlertDialog,
 	AuthButton,
 	ClearButton,
 	ConfirmDialog,
+	CopyDialog,
 	DarkModeSwitch,
 	EntriesList,
 	ImportButton,
@@ -35,6 +36,7 @@ export {
 	MatchPicker,
 	NameInput,
 	NextButton,
+	RankHeader,
 	RankList,
 	RestartButton,
 	StartButton,

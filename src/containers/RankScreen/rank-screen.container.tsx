@@ -4,7 +4,7 @@ import { StackParamList } from "navigator";
 import { RouteProp } from "@react-navigation/native";
 import { View } from "react-native";
 import { Title } from "react-native-paper";
-import { RankList, RestartButton } from "@components/index";
+import { RankList, RestartButton, RankHeader } from "@components/index";
 import { styles } from "./rank-screen.style";
 
 type RankScreenProps = {
@@ -18,10 +18,12 @@ const RankScreen: FunctionComponent<RankScreenProps> = ({
 	},
 	navigation,
 }) => {
+	const result = system.getResults();
+
 	return (
 		<View style={styles.layout}>
-			<Title style={styles.title}>{system.name}</Title>
-			<RankList results={system.getResults()} />
+			<RankHeader name={system.name} result={result} />
+			<RankList results={result} />
 			<RestartButton navigation={navigation} />
 		</View>
 	);

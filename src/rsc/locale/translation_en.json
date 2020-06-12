@@ -3,6 +3,7 @@
 		"alert": "Alert",
 		"cancel": "Cancel",
 		"close": "Close",
+		"copy": "Copy",
 		"next": "Next",
 		"ok": "Ok"
 	},
@@ -25,6 +26,8 @@
 		"match_counter": "Match #"
 	},
 	"RANK": {
+		"copy_to_clipboard": "Copy to clipboard",
+		"rank_of": "Ranking of",
 		"restart": "Restart"
 	},
 	"SETTINGS": {

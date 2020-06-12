@@ -34,8 +34,6 @@ export const AuthStartScreen: FunctionComponent<AuthStartScreenProps> = ({
 		backupsystem = system;
 	}, [list, system]);
 
-	console.log("AuthStartScreen");
-
 	return (
 		<>
 			<StartOptions setList={setList} />
