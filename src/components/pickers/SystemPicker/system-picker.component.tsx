@@ -11,14 +11,18 @@ import { View } from "react-native";
 import { styles } from "./system-picker.style";
 
 type SystemPickerProps = {
+	length: number;
 	setSystem: React.Dispatch<React.SetStateAction<string>>;
 };
 
-let backupSelected = "free4all";
+let backupSelected = "";
 let backupChecked = false;
 
-const SystemPicker: FunctionComponent<SystemPickerProps> = ({ setSystem }) => {
-	const [selected, setSelected] = useState(backupSelected);
+const SystemPicker: FunctionComponent<SystemPickerProps> = ({
+	length,
+	setSystem,
+}) => {
+	const [selected, setSelected] = useState(length < 6 ? "free4all" : "quick");
 	const [checked, setChecked] = useState(backupChecked);
 
 	const { t } = useTranslation();

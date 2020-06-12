@@ -41,7 +41,7 @@ export const AuthStartScreen: FunctionComponent<AuthStartScreenProps> = ({
 			{showSystem ? (
 				<>
 					<NameInput name={name} setName={setName} />
-					<SystemPicker setSystem={setSystem} />
+					<SystemPicker setSystem={setSystem} length={list.length} />
 					<SaveSwitch save={save} setSave={setSave} />
 					<StartButton
 						list={list}

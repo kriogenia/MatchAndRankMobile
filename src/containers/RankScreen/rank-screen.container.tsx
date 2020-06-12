@@ -3,7 +3,6 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { StackParamList } from "navigator";
 import { RouteProp } from "@react-navigation/native";
 import { View } from "react-native";
-import { Title } from "react-native-paper";
 import { RankList, RestartButton, RankHeader } from "@components/index";
 import { styles } from "./rank-screen.style";
 

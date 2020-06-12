@@ -6,7 +6,7 @@ import { Match } from "@model/index";
 import { RouteProp } from "@react-navigation/native";
 import { Title, ProgressBar } from "react-native-paper";
 import { useTranslation } from "react-i18next";
-import { MatchPicker } from "@components/index";
+import { MatchPicker, LoadView } from "@components/index";
 import { styles } from "./match-screen.style";
 
 type MatchScreenProps = {
@@ -59,7 +59,11 @@ const MatchScreen: FunctionComponent<MatchScreenProps> = ({
 						: `${t("MATCH.match_counter")}${counter}`}
 				</Title>
 			</View>
-			{currentMatch && <MatchPicker match={currentMatch} vote={vote} />}
+			{currentMatch && !finished ? (
+				<MatchPicker match={currentMatch} vote={vote} />
+			) : (
+				<LoadView />
+			)}
 			{!finished && <ProgressBar progress={(counter - 1) / expected} />}
 		</View>
 	);
