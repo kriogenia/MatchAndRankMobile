@@ -1,5 +1,5 @@
 import systemFactory from "./system.factory";
-import { Match, System } from "./system.interface";
+import { Draw, Match, System } from "./system.interface";
 
 export { systemFactory };
-export type { Match, System };
+export type { Draw, Match, System };

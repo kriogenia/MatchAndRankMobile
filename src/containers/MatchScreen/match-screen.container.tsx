@@ -2,7 +2,7 @@ import React, { FunctionComponent, useState, useEffect } from "react";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { StackParamList } from "navigator";
 import { View } from "react-native";
-import { Match } from "@model/index";
+import { Match, Draw, System } from "@model/index";
 import { RouteProp } from "@react-navigation/native";
 import { Title, ProgressBar } from "react-native-paper";
 import { useTranslation } from "react-i18next";
@@ -46,7 +46,12 @@ const MatchScreen: FunctionComponent<MatchScreenProps> = ({
 	}, [finished, navigation, system]);
 
 	const vote = (id: string): void => {
-		id === "a" ? system.voteLeft() : system.voteRight();
+		id === "a"
+			? system.voteLeft()
+			: id === "b"
+			? system.voteRight()
+			: //@ts-ignore
+			  system.voteDraw();
 		setCounter(counter + 1);
 	};
 
@@ -60,7 +65,11 @@ const MatchScreen: FunctionComponent<MatchScreenProps> = ({
 				</Title>
 			</View>
 			{currentMatch && !finished ? (
-				<MatchPicker match={currentMatch} vote={vote} />
+				<MatchPicker
+					match={currentMatch}
+					vote={vote}
+					draw={system.allowsDraw()}
+				/>
 			) : (
 				<LoadView />
 			)}

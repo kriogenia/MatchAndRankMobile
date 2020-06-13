@@ -1,5 +1,5 @@
-import { IEntry, Entry } from "../";
-import { System, Match } from "./system.interface";
+import { IEntry, Entry } from "../..";
+import { System, Match } from "../system.interface";
 
 export default class QuickSystem implements System {
 	entries: Entry[];
@@ -71,5 +71,9 @@ export default class QuickSystem implements System {
 
 	getResults(): IEntry[] {
 		return this.results;
+	}
+
+	allowsDraw(): boolean {
+		return false;
 	}
 }

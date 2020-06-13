@@ -14,4 +14,9 @@ export interface System {
 	voteLeft(): void;
 	voteRight(): void;
 	getResults(): IEntry[];
+	allowsDraw(): boolean;
+}
+
+export interface Draw {
+	voteDraw(): void;
 }

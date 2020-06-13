@@ -1,5 +1,5 @@
-import { IEntry, Entry } from "../";
-import { System, Match } from "./system.interface";
+import { IEntry, Entry } from "../..";
+import { System, Match } from "../system.interface";
 
 export default class Free4AllSystem implements System {
 	entries: Entry[];
@@ -62,6 +62,10 @@ export default class Free4AllSystem implements System {
 			results = [...results, ...this.decideDraw(step)];
 		}
 		return results;
+	}
+
+	allowsDraw(): boolean {
+		return false;
 	}
 
 	nextRound(): Match | null {

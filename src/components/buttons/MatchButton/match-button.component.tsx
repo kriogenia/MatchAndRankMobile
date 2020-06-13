@@ -14,9 +14,16 @@ const MatchButton: FunctionComponent<MatchButtonProps> = ({
 }) => {
 	const { colors } = useTheme();
 
+	const getColor = ():string => {
+		if (id === "a") return colors.primary;
+		if (id === "b") return colors.accent;
+		if (id === "draw") return colors.disabled;
+		return "";
+	}
+
 	return (
 		<Button
-			color={id === "a" ? colors.primary : colors.accent}
+			color={getColor()}
 			contentStyle={styles.innerText}
 			mode="contained"
 			onPress={() => vote(id)}

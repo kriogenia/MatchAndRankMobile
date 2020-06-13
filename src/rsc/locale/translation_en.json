@@ -22,6 +22,7 @@
 		"identify_yourself": "You must be logged in to use the application"
 	},
 	"MATCH": {
+		"draw": "Draw",
 		"finished": "Loading results",
 		"match_counter": "Match #"
 	},
