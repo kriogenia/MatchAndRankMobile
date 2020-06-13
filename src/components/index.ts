@@ -6,6 +6,7 @@ import {
 	MatchButton,
 	NextButton,
 	RestartButton,
+	SettingsButton,
 	StartButton,
 } from "./buttons";
 import { AlertDialog, ConfirmDialog, CopyDialog } from "./dialogs";
@@ -40,6 +41,7 @@ export {
 	RankList,
 	RestartButton,
 	StartButton,
+	SettingsButton,
 	SystemPicker,
 	UserView,
 };

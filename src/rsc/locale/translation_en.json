@@ -34,6 +34,8 @@
 	"SETTINGS": {
 		"change_language": "Change language",
 		"dark_mode": "Dark Mode",
+		"my_lists": "My lists",
+		"my_ranks": "My rankings",
 		"preferences": "Preferences"
 	},
 	"START": {
