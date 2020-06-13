@@ -2,6 +2,7 @@ import Free4AllSystem from "./Free4All/free4all-system.entity";
 import QuickSystem from "./QuickSystem/quick-system.entity";
 import { System } from "./system.interface";
 import Free4AllWithDrawSystem from "./Free4All/free4all-draw-system.entity";
+import QuickWithDrawSystem from "./QuickSystem/quick-draw-system.entity";
 
 const systemFactory = (code: string, list: string[], name: string): System => {
 	switch (code) {
@@ -11,6 +12,8 @@ const systemFactory = (code: string, list: string[], name: string): System => {
 			return new QuickSystem(list, name);
 		case "fd":
 			return new Free4AllWithDrawSystem(list, name);
+		case "qd":
+			return new QuickWithDrawSystem(list, name);
 		default:
 			throw "Invalid code";
 	}
