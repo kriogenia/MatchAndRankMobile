@@ -4,6 +4,7 @@ import { View } from "react-native";
 import { MatchButton } from "@components/index";
 import { Title } from "react-native-paper";
 import { useTranslation } from "react-i18next";
+import { styles } from "./match-picker.style";
 
 type MatchPickerProps = {
 	draw: boolean;
@@ -16,7 +17,7 @@ const MatchPicker: FunctionComponent<MatchPickerProps> = ({
 	match,
 	vote,
 }) => {
-	const {t} = useTranslation();
+	const { t } = useTranslation();
 
 	return (
 		<View>
@@ -28,7 +29,9 @@ const MatchPicker: FunctionComponent<MatchPickerProps> = ({
 					{t("MATCH.draw")}
 				</MatchButton>
 			) : (
-				<Title>vs</Title>
+				<View style={styles.vs}>
+					<Title>vs</Title>
+				</View>
 			)}
 			<MatchButton id={"b"} vote={vote}>
 				{match.b.name}

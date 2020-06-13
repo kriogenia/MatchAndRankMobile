@@ -2,12 +2,24 @@ import React, { FunctionComponent, useState, useEffect } from "react";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { StackParamList } from "navigator";
 import { View } from "react-native";
-import { Match, Draw, System } from "@model/index";
+import { Match } from "@model/index";
 import { RouteProp } from "@react-navigation/native";
 import { Title, ProgressBar } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 import { MatchPicker, LoadView } from "@components/index";
+import {
+	InterstitialAd,
+	AdEventType,
+	TestIds,
+} from "@react-native-firebase/admob";
 import { styles } from "./match-screen.style";
+import { adUnitID } from "./../../../private.config";
+
+const adUnitId = __DEV__ ? TestIds.INTERSTITIAL : adUnitID;
+
+const interstitial = InterstitialAd.createForAdRequest(adUnitId, {
+	requestNonPersonalizedAdsOnly: true,
+});
 
 type MatchScreenProps = {
 	navigation: StackNavigationProp<StackParamList, "Match">;
@@ -24,9 +36,30 @@ const MatchScreen: FunctionComponent<MatchScreenProps> = ({
 	const [expected, setExpected] = useState(1);
 	const [currentMatch, setCurrentMatch] = useState<Match>();
 	const [finished, setFinished] = useState(false);
+	const [adLoaded, setAdLoaded] = useState(false);
 
 	const { t } = useTranslation();
 
+	// Ad load and management
+	useEffect(() => {
+		const eventListener = interstitial.onAdEvent((type) => {
+			if (type === AdEventType.LOADED) {
+				setAdLoaded(true);
+			} else if (
+				type === AdEventType.CLICKED ||
+				type === AdEventType.CLOSED ||
+				type === AdEventType.LEFT_APPLICATION
+			) {
+				navigation.navigate("Rank", { system: system });
+			}
+		});
+		interstitial.load();
+		return () => {
+			eventListener();
+		};
+	}, []);
+
+	// Match loading
 	useEffect(() => {
 		const match = system.nextMatch();
 		if (match == null) {
@@ -37,11 +70,11 @@ const MatchScreen: FunctionComponent<MatchScreenProps> = ({
 		}
 	}, [counter, system]);
 
+	// Finishing management
 	useEffect(() => {
-		if (finished) {
+		if (finished && adLoaded) {
 			console.log("PERSIST RESULTS");
-			console.log("DISPLAY AD");
-			navigation.navigate("Rank", { system: system });
+			interstitial.show();
 		}
 	}, [finished, navigation, system]);
 
