@@ -32,6 +32,7 @@ const SettingsScreen: FunctionComponent = () => {
 									icon={x.icon}
 									route={x.route}
 									text={x.text}
+									key={x.text}
 								/>
 							))}
 							<Drawer.Section

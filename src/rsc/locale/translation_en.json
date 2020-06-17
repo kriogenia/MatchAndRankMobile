@@ -24,6 +24,7 @@
 	"MATCH": {
 		"draw": "Draw",
 		"finished": "Loading results",
+		"loading_ad": "We're requesting an ad, please wait",
 		"match_counter": "Match #"
 	},
 	"RANK": {

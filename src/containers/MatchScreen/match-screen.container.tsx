@@ -76,7 +76,7 @@ const MatchScreen: FunctionComponent<MatchScreenProps> = ({
 			console.log("PERSIST RESULTS");
 			interstitial.show();
 		}
-	}, [finished, navigation, system]);
+	}, [finished, adLoaded, navigation, system]);
 
 	const vote = (id: string): void => {
 		id === "a"
@@ -104,7 +104,7 @@ const MatchScreen: FunctionComponent<MatchScreenProps> = ({
 					draw={system.allowsDraw()}
 				/>
 			) : (
-				<LoadView />
+				<LoadView text={t("MATCH.loading_ad")}/>
 			)}
 			{!finished && <ProgressBar progress={(counter - 1) / expected} />}
 		</View>

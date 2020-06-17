@@ -5,7 +5,4 @@ admob()
 		maxAdContentRating: MaxAdContentRating.MA,
 		tagForChildDirectedTreatment: false,
 		tagForUnderAgeOfConsent: true,
-	})
-	.then(() => {
-		console.log("Request config successfully set");
 	});
