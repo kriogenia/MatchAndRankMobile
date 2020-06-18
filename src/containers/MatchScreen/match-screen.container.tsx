@@ -36,15 +36,20 @@ const MatchScreen: FunctionComponent<MatchScreenProps> = ({
 	const [expected, setExpected] = useState(1);
 	const [currentMatch, setCurrentMatch] = useState<Match>();
 	const [finished, setFinished] = useState(false);
-	const [adLoaded, setAdLoaded] = useState(false);
+	const [adLoaded, setAdLoaded] = useState("NOT_YET_LOADED");
 
 	const { t } = useTranslation();
 
-	// Ad load and management
+	// Component Did Mount
 	useEffect(() => {
+		// Reset states
+		setCounter(1);
+		setFinished(false);
+		setAdLoaded("NOT_YET_LOADED");
+		// Set and solicitates ad
 		const eventListener = interstitial.onAdEvent((type) => {
 			if (type === AdEventType.LOADED) {
-				setAdLoaded(true);
+				setAdLoaded("LOADED");
 			} else if (
 				type === AdEventType.CLICKED ||
 				type === AdEventType.CLOSED ||
@@ -57,7 +62,7 @@ const MatchScreen: FunctionComponent<MatchScreenProps> = ({
 		return () => {
 			eventListener();
 		};
-	}, []);
+	}, [system, navigation]);
 
 	// Match loading
 	useEffect(() => {
@@ -68,13 +73,20 @@ const MatchScreen: FunctionComponent<MatchScreenProps> = ({
 			setCurrentMatch(match);
 			setExpected(match.expected);
 		}
-	}, [counter, system]);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [counter]);
 
 	// Finishing management
 	useEffect(() => {
-		if (finished && adLoaded) {
-			console.log("PERSIST RESULTS");
-			interstitial.show();
+		if (finished) {
+			if (adLoaded === "LOADED") interstitial.show();
+			else if (adLoaded === "SKIP")
+				navigation.navigate("Rank", { system: system });
+			else {
+				setTimeout(() => {
+					if (adLoaded !== "LOADED") setAdLoaded("SKIP");
+				}, 5000);
+			}
 		}
 	}, [finished, adLoaded, navigation, system]);
 
@@ -104,7 +116,7 @@ const MatchScreen: FunctionComponent<MatchScreenProps> = ({
 					draw={system.allowsDraw()}
 				/>
 			) : (
-				<LoadView text={t("MATCH.loading_ad")}/>
+				<LoadView text={finished ? t("MATCH.loading_ad") : " "} />
 			)}
 			{!finished && <ProgressBar progress={(counter - 1) / expected} />}
 		</View>

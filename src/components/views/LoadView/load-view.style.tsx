@@ -9,5 +9,5 @@ export const styles = StyleSheet.create({
 	text: {
 		marginTop: 10,
 		textAlign: "center",
-	}
+	},
 });

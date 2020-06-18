@@ -27,6 +27,10 @@
 		"loading_ad": "We're requesting an ad, please wait",
 		"match_counter": "Match #"
 	},
+	"MY_LISTS": {
+		"delete_list": "Delete list",
+		"import_list": "Import list"
+	},
 	"RANK": {
 		"copy_to_clipboard": "Copy to clipboard",
 		"rank_of": "Ranking of",

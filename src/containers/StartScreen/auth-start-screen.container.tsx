@@ -47,6 +47,7 @@ export const AuthStartScreen: FunctionComponent<AuthStartScreenProps> = ({
 						list={list}
 						systemCode={system}
 						navigation={navigation}
+						save={save}
 						saveAs={name}
 						reset={setShowSystem}
 					/>

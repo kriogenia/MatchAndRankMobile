@@ -14,12 +14,12 @@ const MatchButton: FunctionComponent<MatchButtonProps> = ({
 }) => {
 	const { colors } = useTheme();
 
-	const getColor = ():string => {
+	const getColor = (): string => {
 		if (id === "a") return colors.primary;
 		if (id === "b") return colors.accent;
 		if (id === "draw") return colors.disabled;
 		return "";
-	}
+	};
 
 	return (
 		<Button

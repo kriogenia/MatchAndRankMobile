@@ -7,25 +7,20 @@ import { useTranslation } from "react-i18next";
 
 type SettingsButtonProps = {
 	icon: string;
-	route: string;
+	onPress: () => void;
 	text: string;
 };
 
 const SettingsButton: FunctionComponent<SettingsButtonProps> = ({
 	icon,
-	route,
+	onPress,
 	text,
 }) => {
 	const { colors } = useTheme();
 	const { t } = useTranslation();
 
-	const handleNavigation = () => {
-		// navigate to
-		console.log(route);
-	};
-
 	return (
-		<TouchableRipple onPress={handleNavigation} >
+		<TouchableRipple onPress={onPress}>
 			<View style={styles.selector}>
 				<MaterialCommunityIcons
 					name={icon}

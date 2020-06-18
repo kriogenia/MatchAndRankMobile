@@ -1,11 +1,11 @@
 import React, { FunctionComponent } from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
-import { createStackNavigator } from "@react-navigation/stack";
 import {
 	MatchScreen,
 	SettingsScreen,
 	StartScreen,
 	RankScreen,
+	MyListsScreen,
 } from "@containers/index";
 import { System } from "./model";
 
@@ -13,25 +13,21 @@ export type StackParamList = {
 	Start: undefined;
 	Match: { system: System };
 	Rank: { system: System };
+	MyLists: undefined;
 };
 
-const Drawer = createDrawerNavigator();
-const Stack = createStackNavigator<StackParamList>();
-
-const StackNavigator: FunctionComponent = () => {
-	return (
-		<Stack.Navigator initialRouteName="Start" headerMode="none">
-			<Stack.Screen name="Start" component={StartScreen} />
-			<Stack.Screen name="Match" component={MatchScreen} />
-			<Stack.Screen name="Rank" component={RankScreen} />
-		</Stack.Navigator>
-	);
-};
+const Drawer = createDrawerNavigator<StackParamList>();
 
 const Navigator: FunctionComponent = () => {
 	return (
-		<Drawer.Navigator drawerContent={() => <SettingsScreen />}>
-			<Drawer.Screen name="Stack" component={StackNavigator} />
+		<Drawer.Navigator
+			backBehavior="initialRoute"
+			initialRouteName="Start"
+			drawerContent={(props) => <SettingsScreen {...props} />}>
+			<Drawer.Screen name="Start" component={StartScreen} />
+			<Drawer.Screen name="Match" component={MatchScreen} />
+			<Drawer.Screen name="Rank" component={RankScreen} />
+			<Drawer.Screen name="MyLists" component={MyListsScreen} />
 		</Drawer.Navigator>
 	);
 };

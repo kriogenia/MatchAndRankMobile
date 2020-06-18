@@ -11,7 +11,7 @@ import {
 } from "./buttons";
 import { AlertDialog, ConfirmDialog, CopyDialog } from "./dialogs";
 import { NameInput } from "./forms";
-import { EntriesList, RankList } from "./lists";
+import { EntriesList, ListsAccordion, RankList } from "./lists";
 import {
 	DarkModeSwitch,
 	LanguagePicker,
@@ -31,6 +31,7 @@ export {
 	ImportButton,
 	LanguagePicker,
 	SaveSwitch,
+	ListsAccordion,
 	LoadButton,
 	LoadView,
 	MatchButton,

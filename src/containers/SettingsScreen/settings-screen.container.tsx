@@ -1,7 +1,11 @@
 import React, { FunctionComponent } from "react";
 import { View } from "react-native";
 import { Drawer } from "react-native-paper";
-import { DrawerContentScrollView } from "@react-navigation/drawer";
+import {
+	DrawerContentScrollView,
+	DrawerContentComponentProps,
+	DrawerContentOptions,
+} from "@react-navigation/drawer";
 import { UserContext, UserContextConsumer } from "@hooks/index";
 import {
 	DarkModeSwitch,
@@ -17,9 +21,17 @@ const navButtons = [
 	{ icon: "format-list-numbered", route: "MyRanks", text: "my_ranks" },
 ];
 
-const SettingsScreen: FunctionComponent = () => {
+const SettingsScreen: FunctionComponent<DrawerContentComponentProps<
+	DrawerContentOptions
+>> = ({ navigation }) => {
 	const { t } = useTranslation();
 
+	const navigateTo = (route: string) => {
+		if (route === "MyLists") {
+			navigation.navigate(route);
+		}
+	};
+	1;
 	return (
 		<DrawerContentScrollView>
 			<UserContextConsumer>
@@ -30,7 +42,7 @@ const SettingsScreen: FunctionComponent = () => {
 							{navButtons.map((x) => (
 								<SettingsButton
 									icon={x.icon}
-									route={x.route}
+									onPress={() => navigateTo(x.route)}
 									text={x.text}
 									key={x.text}
 								/>
