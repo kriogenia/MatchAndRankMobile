@@ -6,12 +6,17 @@ import { StackParamList } from "navigator";
 import { UserContextConsumer, UserContext } from "@hooks/index";
 import { AuthButton, AlertDialog } from "@components/index";
 import { AuthStartScreen } from "./auth-start-screen.container";
+import { RouteProp } from "@react-navigation/native";
 
 type StartScreenProps = {
 	navigation: StackNavigationProp<StackParamList, "Start">;
+	route: RouteProp<StackParamList, "Start">;
 };
 
-const StartScreen: FunctionComponent<StartScreenProps> = ({ navigation }) => {
+const StartScreen: FunctionComponent<StartScreenProps> = ({
+	route: { params },
+	navigation,
+}) => {
 	const [alertText, setAlertText] = useState("");
 
 	return (
@@ -20,7 +25,11 @@ const StartScreen: FunctionComponent<StartScreenProps> = ({ navigation }) => {
 				{(context: UserContext | undefined) =>
 					context &&
 					(context.userInfo ? (
-						<AuthStartScreen navigation={navigation} setAlert={setAlertText} />
+						<AuthStartScreen
+							navigation={navigation}
+							setAlert={setAlertText}
+							imported={params?.imported}
+						/>
 					) : (
 						<AuthButton context={context} />
 					))

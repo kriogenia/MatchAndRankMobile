@@ -22,6 +22,14 @@ export class StorageManager {
 		}
 	};
 
+	removeList = async (name: string): Promise<void> => {
+		try {
+			return AsyncStorage.removeItem(`@list_${name}`);
+		} catch (e) {
+			console.error(e.message);
+		}
+	};
+
 	saveList = async (list: string[], saveAs: string): Promise<void> => {
 		try {
 			const object: PersistantList = {

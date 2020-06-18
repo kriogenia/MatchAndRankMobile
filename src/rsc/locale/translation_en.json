@@ -28,8 +28,11 @@
 		"match_counter": "Match #"
 	},
 	"MY_LISTS": {
+		"delete_dialog": "Are you sure you want to delete this list?",
 		"delete_list": "Delete list",
-		"import_list": "Import list"
+		"import_dialog": "Do you want to load this list?",
+		"import_list": "Import list",
+		"my_lists": "My lists"
 	},
 	"RANK": {
 		"copy_to_clipboard": "Copy to clipboard",

@@ -8,9 +8,10 @@ import {
 	MyListsScreen,
 } from "@containers/index";
 import { System } from "./model";
+import { PersistantList } from "./hooks";
 
 export type StackParamList = {
-	Start: undefined;
+	Start: { imported: PersistantList } | undefined;
 	Match: { system: System };
 	Rank: { system: System };
 	MyLists: undefined;

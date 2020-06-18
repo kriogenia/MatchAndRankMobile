@@ -4,16 +4,21 @@ import { useStorage, PersistantList } from "@hooks/index";
 import { ListsAccordion } from "@components/index";
 import { StackParamList } from "navigator";
 import { StackNavigationProp } from "@react-navigation/stack";
-import { Caption } from "react-native-paper";
+import { Caption, Title } from "react-native-paper";
 import { useFocusEffect } from "@react-navigation/native";
+import { useTranslation } from "react-i18next";
+import { styles } from "./mylists-screen.style";
 
 type MyListsScreenProps = {
-	navigation: StackNavigationProp<StackParamList, "Start">;
+	navigation: StackNavigationProp<StackParamList, "MyLists">;
 };
 
-const MyListsScreen: FunctionComponent<MyListsScreenProps> = ({}) => {
+const MyListsScreen: FunctionComponent<MyListsScreenProps> = ({
+	navigation,
+}) => {
 	const [lists, setLists] = useState<PersistantList[]>([]);
 
+	const { t } = useTranslation();
 	const { getLists } = useStorage();
 
 	useFocusEffect(
@@ -34,8 +39,9 @@ const MyListsScreen: FunctionComponent<MyListsScreenProps> = ({}) => {
 
 	return (
 		<ScrollView>
+			<Title style={styles.title}>{t("MY_LISTS.my_lists")}</Title>
 			{lists.length > 0 ? (
-				<ListsAccordion collection={lists} />
+				<ListsAccordion collection={lists} navigation={navigation} />
 			) : (
 				<Caption>No tienes bro</Caption>
 			)}

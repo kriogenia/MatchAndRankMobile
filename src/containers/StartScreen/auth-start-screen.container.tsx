@@ -10,16 +10,19 @@ import {
 	SaveSwitch,
 	NameInput,
 } from "@components/index";
+import { PersistantList } from "@hooks/index";
 
 let backuplist: string[] = [];
 let backupsystem: string = "f";
 
 type AuthStartScreenProps = {
+	imported?: PersistantList;
 	navigation: StackNavigationProp<StackParamList, "Start">;
 	setAlert: React.Dispatch<React.SetStateAction<string>>;
 };
 
 export const AuthStartScreen: FunctionComponent<AuthStartScreenProps> = ({
+	imported,
 	navigation,
 	setAlert,
 }) => {
@@ -33,6 +36,13 @@ export const AuthStartScreen: FunctionComponent<AuthStartScreenProps> = ({
 		backuplist = [...list];
 		backupsystem = system;
 	}, [list, system]);
+
+	useEffect(() => {
+		if (imported) {
+			setList(imported.collection);
+			setName(imported.name);
+		}
+	}, [imported]);
 
 	return (
 		<>
