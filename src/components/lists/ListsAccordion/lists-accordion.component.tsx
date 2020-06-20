@@ -24,17 +24,11 @@ const ListsAccordion: FunctionComponent<ListsAccordionProps> = ({
 	);
 
 	const { t } = useTranslation();
-	const { removeList } = useStorage();
+	const { remove } = useStorage();
 
-	const handleImport = (list: PersistantList) => {
+	const handle = (act: "import" | "delete", list: PersistantList) => {
 		setListToHandle(list);
-		setAction("import");
-		setDialogOpen(true);
-	};
-
-	const handleDelete = (list: PersistantList) => {
-		setListToHandle(list);
-		setAction("delete");
+		setAction(act);
 		setDialogOpen(true);
 	};
 
@@ -42,7 +36,7 @@ const ListsAccordion: FunctionComponent<ListsAccordionProps> = ({
 		if (_action === "import") {
 			navigation.navigate("Start", { imported: listToHandle });
 		} else {
-			removeList(listToHandle.name);
+			remove("list", listToHandle.name);
 		}
 		setDialogOpen(false);
 	};
@@ -70,10 +64,10 @@ const ListsAccordion: FunctionComponent<ListsAccordionProps> = ({
 						<List.Item title={entry} key={entry} style={styles.item} />
 					))}
 					<View style={styles.buttons}>
-						<Button icon="playlist-play" onPress={() => handleImport(list)}>
+						<Button icon="playlist-play" onPress={() => handle("import", list)}>
 							{t("MY_LISTS.import_list")}
 						</Button>
-						<Button icon="delete" onPress={() => handleDelete(list)}>
+						<Button icon="delete" onPress={() => handle("delete", list)}>
 							{t("MY_LISTS.delete_list")}
 						</Button>
 					</View>

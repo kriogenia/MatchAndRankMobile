@@ -1,5 +1,6 @@
 import {
 	PersistantList,
+	PersistantRank,
 	StorageManager,
 	useStorage,
 } from "./StorageManager/storage-manager.hook";
@@ -12,4 +13,4 @@ import {
 } from "./UserContextProvider/user-info.context";
 
 export { StorageManager, UserContextConsumer, UserContextProvider, useStorage };
-export type { PersistantList, UserConsumerProps, UserContext };
+export type { PersistantList, PersistantRank, UserConsumerProps, UserContext };

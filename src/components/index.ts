@@ -6,12 +6,13 @@ import {
 	MatchButton,
 	NextButton,
 	RestartButton,
+	SaveRankButton,
 	SettingsButton,
 	StartButton,
 } from "./buttons";
 import { AlertDialog, ConfirmDialog, CopyDialog } from "./dialogs";
 import { NameInput } from "./forms";
-import { EntriesList, ListsAccordion, RankList } from "./lists";
+import { EntriesList, ListsAccordion, RankList, RanksAccordion } from "./lists";
 import {
 	DarkModeSwitch,
 	LanguagePicker,
@@ -40,7 +41,9 @@ export {
 	NextButton,
 	RankHeader,
 	RankList,
+	RanksAccordion,
 	RestartButton,
+	SaveRankButton,
 	StartButton,
 	SettingsButton,
 	SystemPicker,

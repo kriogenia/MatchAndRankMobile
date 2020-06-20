@@ -3,6 +3,7 @@
 		"alert": "Alert",
 		"cancel": "Cancel",
 		"close": "Close",
+		"confirm": "Confirm",
 		"copy": "Copy",
 		"next": "Next",
 		"ok": "Ok"
@@ -30,14 +31,26 @@
 	"MY_LISTS": {
 		"delete_dialog": "Are you sure you want to delete this list?",
 		"delete_list": "Delete list",
+		"empty": "You don't have any saved list yet",
 		"import_dialog": "Do you want to load this list?",
 		"import_list": "Import list",
+		"loading": "Loading lists",
 		"my_lists": "My lists"
 	},
+	"MY_RANKS": {
+		"copy_rank": "Copy ranking",
+		"delete_dialog": "Are you sure you want to delete this ranking?",
+		"delete_rank": "Delete ranking",
+		"empty": "You don't have any saved ranking yet",
+		"loading": "Loading rankings",
+		"my_ranks": "My rankings"
+	},
 	"RANK": {
+		"confirm_restart": "Are you sure you want to restart? Any ranking not saved will be lost.",
 		"copy_to_clipboard": "Copy to clipboard",
 		"rank_of": "Ranking of",
-		"restart": "Restart"
+		"restart": "Restart",
+		"save": "Save rank"
 	},
 	"SETTINGS": {
 		"change_language": "Change language",

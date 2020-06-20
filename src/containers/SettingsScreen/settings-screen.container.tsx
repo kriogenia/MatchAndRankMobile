@@ -27,7 +27,7 @@ const SettingsScreen: FunctionComponent<DrawerContentComponentProps<
 	const { t } = useTranslation();
 
 	const navigateTo = (route: string) => {
-		if (route === "MyLists") {
+		if (route === "MyLists" || route === "MyRanks") {
 			navigation.navigate(route);
 		}
 	};

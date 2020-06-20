@@ -5,6 +5,7 @@ import LoadButton from "./LoadButton/load-button.component";
 import MatchButton from "./MatchButton/match-button.component";
 import NextButton from "./NextButton/next-button.component";
 import RestartButton from "./RestartButton/restart-button.component";
+import SaveRankButton from "./SaveRankButton/saverank-button.component";
 import SettingsButton from "./SettingsButton/settings-button.component";
 import StartButton from "./StartButton/start-button.component";
 
@@ -16,6 +17,7 @@ export {
 	MatchButton,
 	NextButton,
 	RestartButton,
+	SaveRankButton,
 	SettingsButton,
 	StartButton,
 };

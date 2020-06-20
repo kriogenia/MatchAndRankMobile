@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState, useCallback } from "react";
 import { ScrollView } from "react-native-gesture-handler";
 import { useStorage, PersistantList } from "@hooks/index";
-import { ListsAccordion } from "@components/index";
+import { ListsAccordion, LoadView } from "@components/index";
 import { StackParamList } from "navigator";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { Caption, Title } from "react-native-paper";
@@ -17,33 +17,37 @@ const MyListsScreen: FunctionComponent<MyListsScreenProps> = ({
 	navigation,
 }) => {
 	const [lists, setLists] = useState<PersistantList[]>([]);
+	const [loading, setLoading] = useState<boolean>(true);
 
 	const { t } = useTranslation();
-	const { getLists } = useStorage();
+	const { get } = useStorage();
 
 	useFocusEffect(
 		useCallback(() => {
-			getLists()
+			get("list")
 				.then((pairs) => {
 					const listStrings: PersistantList[] = pairs.map((pair) =>
 						pair[1] ? JSON.parse(pair[1]) : undefined,
 					);
 					setLists(listStrings);
+					setLoading(false);
 				})
 				.catch((e: Error) => {
 					console.error(e.message);
 				});
 			return () => {};
-		}, [getLists]),
+		}, [get]),
 	);
 
 	return (
 		<ScrollView>
 			<Title style={styles.title}>{t("MY_LISTS.my_lists")}</Title>
-			{lists.length > 0 ? (
+			{loading ? (
+				<LoadView text={t("MY_LISTS.loading")} />
+			) : lists.length > 0 ? (
 				<ListsAccordion collection={lists} navigation={navigation} />
 			) : (
-				<Caption>No tienes bro</Caption>
+				<Caption>{t("MY_LISTS.empty")}</Caption>
 			)}
 		</ScrollView>
 	);

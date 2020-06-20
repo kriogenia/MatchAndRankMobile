@@ -3,7 +3,12 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { StackParamList } from "navigator";
 import { RouteProp } from "@react-navigation/native";
 import { View } from "react-native";
-import { RankList, RestartButton, RankHeader } from "@components/index";
+import {
+	RankList,
+	RestartButton,
+	RankHeader,
+	SaveRankButton,
+} from "@components/index";
 import { styles } from "./rank-screen.style";
 import { IEntry } from "@model/index";
 
@@ -19,15 +24,23 @@ const RankScreen: FunctionComponent<RankScreenProps> = ({
 	navigation,
 }) => {
 	const [result, setResult] = useState<IEntry[]>(system.getResults());
+	const [saved, setSaved] = useState<boolean>(false);
 
 	useEffect(() => {
 		setResult(system.getResults());
+		setSaved(false);
 	}, [system]);
 
 	return (
 		<View style={styles.layout}>
 			<RankHeader name={system.name} result={result} />
 			<RankList results={result} />
+			<SaveRankButton
+				name={system.name}
+				result={result}
+				saved={saved}
+				setSaved={setSaved}
+			/>
 			<RestartButton navigation={navigation} />
 		</View>
 	);

@@ -20,7 +20,7 @@ const ConfirmDialog: FunctionComponent<ConfirmDialogProps> = ({
 	return (
 		<Portal>
 			<Dialog visible={isVisible} onDismiss={onDismiss}>
-				<Dialog.Title>{t("COMMON.alert")}</Dialog.Title>
+				<Dialog.Title>{t("COMMON.confirm")}</Dialog.Title>
 				<Dialog.Content>
 					<Paragraph>{text}</Paragraph>
 				</Dialog.Content>

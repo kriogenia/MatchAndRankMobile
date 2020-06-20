@@ -6,6 +6,7 @@ import {
 	StartScreen,
 	RankScreen,
 	MyListsScreen,
+	MyRanksScreen,
 } from "@containers/index";
 import { System } from "./model";
 import { PersistantList } from "./hooks";
@@ -15,6 +16,7 @@ export type StackParamList = {
 	Match: { system: System };
 	Rank: { system: System };
 	MyLists: undefined;
+	MyRanks: undefined;
 };
 
 const Drawer = createDrawerNavigator<StackParamList>();
@@ -29,6 +31,7 @@ const Navigator: FunctionComponent = () => {
 			<Drawer.Screen name="Match" component={MatchScreen} />
 			<Drawer.Screen name="Rank" component={RankScreen} />
 			<Drawer.Screen name="MyLists" component={MyListsScreen} />
+			<Drawer.Screen name="MyRanks" component={MyRanksScreen} />
 		</Drawer.Navigator>
 	);
 };
