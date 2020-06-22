@@ -72,6 +72,8 @@
 			"quick": "Quick"
 		},
 		"save_list": "Save list",
-		"start": "Start"
+		"saved_lists": "Saved lists",
+		"start": "Start",
+		"templates": "Templates"
 	}
 }

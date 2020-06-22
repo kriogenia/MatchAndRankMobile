@@ -5,13 +5,17 @@ import { Surface } from "react-native-paper";
 
 type StartOptionsProps = {
 	setList: Dispatch<React.SetStateAction<string[]>>;
+	setName: Dispatch<React.SetStateAction<string>>;
 };
 
-const StartOptions: FunctionComponent<StartOptionsProps> = ({ setList }) => {
+const StartOptions: FunctionComponent<StartOptionsProps> = ({
+	setList,
+	setName,
+}) => {
 	return (
 		<Surface style={styles.layout}>
 			<ImportButton />
-			<LoadButton />
+			<LoadButton setList={setList} setName={setName} />
 			<ClearButton setList={setList} />
 		</Surface>
 	);

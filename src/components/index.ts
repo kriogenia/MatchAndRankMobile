@@ -10,7 +10,7 @@ import {
 	SettingsButton,
 	StartButton,
 } from "./buttons";
-import { AlertDialog, ConfirmDialog, CopyDialog } from "./dialogs";
+import { AlertDialog, ConfirmDialog, CopyDialog, LoadDialog } from "./dialogs";
 import { NameInput } from "./forms";
 import { EntriesList, ListsAccordion, RankList, RanksAccordion } from "./lists";
 import {
@@ -31,9 +31,9 @@ export {
 	EntriesList,
 	ImportButton,
 	LanguagePicker,
-	SaveSwitch,
 	ListsAccordion,
 	LoadButton,
+	LoadDialog,
 	LoadView,
 	MatchButton,
 	MatchPicker,
@@ -44,8 +44,9 @@ export {
 	RanksAccordion,
 	RestartButton,
 	SaveRankButton,
-	StartButton,
+	SaveSwitch,
 	SettingsButton,
+	StartButton,
 	SystemPicker,
 	UserView,
 };
