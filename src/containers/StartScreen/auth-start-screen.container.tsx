@@ -46,7 +46,7 @@ export const AuthStartScreen: FunctionComponent<AuthStartScreenProps> = ({
 
 	return (
 		<>
-			<StartOptions setAlert={setAlert} setList={setList} setName={setName}/>
+			<StartOptions setAlert={setAlert} setList={setList} setName={setName} />
 			<EntriesList list={list} setList={setList} alert={setAlert} />
 			{showSystem ? (
 				<>

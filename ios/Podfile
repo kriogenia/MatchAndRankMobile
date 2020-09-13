@@ -79,6 +79,8 @@ target 'MatchAndRank' do
 
   pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
 
+  pod 'react-native-view-shot', :path => '../node_modules/react-native-view-shot'
+
   target 'MatchAndRankTests' do
     inherit! :complete
     # Pods for testing

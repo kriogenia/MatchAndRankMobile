@@ -1,6 +1,6 @@
 import { PersistantList } from "@hooks/index";
 
-export const bookSagas:PersistantList = {
+export const bookSagas: PersistantList = {
 	name: "Book Sagas",
 	type: "list",
 	collection: [
@@ -9,6 +9,6 @@ export const bookSagas:PersistantList = {
 		"The Chronicles of Narnia",
 		"Harry Potter",
 		"Hunger Games",
-		"The Wheel of Time"
-	]
-}
+		"The Wheel of Time",
+	],
+};

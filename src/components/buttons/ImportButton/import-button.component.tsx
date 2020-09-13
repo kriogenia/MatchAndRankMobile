@@ -1,7 +1,7 @@
 import React, { FunctionComponent, useState } from "react";
 import { Button } from "react-native-paper";
 import { useTranslation } from "react-i18next";
-import { AlertDialog, ImportDialog } from "@components/dialogs";
+import { ImportDialog } from "@components/dialogs";
 
 type ImportButtonProps = {
 	setAlert: React.Dispatch<React.SetStateAction<string>>;
@@ -15,7 +15,7 @@ const ImportButton: FunctionComponent<ImportButtonProps> = ({
 	setName,
 }) => {
 	const [isVisible, setIsVisible] = useState(false);
-1
+
 	const { t } = useTranslation();
 
 	return (

@@ -1,8 +1,4 @@
-import React, {
-	FunctionComponent,
-	useState,
-	useEffect,
-} from "react";
+import React, { FunctionComponent, useState, useEffect } from "react";
 import { Button, List, TouchableRipple } from "react-native-paper";
 import { useTranslation } from "react-i18next";
 import { View } from "react-native";

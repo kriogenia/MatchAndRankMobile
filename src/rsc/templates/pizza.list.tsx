@@ -1,6 +1,6 @@
 import { PersistantList } from "@hooks/index";
 
-export const pizza:PersistantList = {
+export const pizza: PersistantList = {
 	name: "Pizzas",
 	type: "list",
 	collection: [
@@ -10,6 +10,6 @@ export const pizza:PersistantList = {
 		"BBQ",
 		"Hawaiian",
 		"Napoletana",
-		"Carbonara"
-	]
-}
+		"Carbonara",
+	],
+};

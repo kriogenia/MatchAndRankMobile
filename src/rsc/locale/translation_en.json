@@ -50,6 +50,7 @@
 	"RANK": {
 		"confirm_restart": "Are you sure you want to restart? Any ranking not saved will be lost.",
 		"copy_to_clipboard": "Copy to clipboard",
+		"generated": "generated with MatchAndRank app",
 		"rank_of": "Ranking of",
 		"restart": "Restart",
 		"save": "Save rank",

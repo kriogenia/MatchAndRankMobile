@@ -1,6 +1,6 @@
 import { PersistantList } from "@hooks/index";
 
-export const fromSoftware:PersistantList = {
+export const fromSoftware: PersistantList = {
 	name: "From Software Games",
 	type: "list",
 	collection: [
@@ -9,6 +9,6 @@ export const fromSoftware:PersistantList = {
 		"Dark Souls 2",
 		"Bloodborne",
 		"Dark Souls 3",
-		"Sekiro"
-	]
-}
+		"Sekiro",
+	],
+};

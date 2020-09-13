@@ -1,6 +1,6 @@
 import { PersistantList } from "@hooks/index";
 
-export const queen:PersistantList = {
+export const queen: PersistantList = {
 	name: "Queen Songs",
 	type: "list",
 	collection: [
@@ -10,6 +10,6 @@ export const queen:PersistantList = {
 		"We Will Rock You",
 		"We are the Champions",
 		"Another One Bites the Dust",
-		"Don't Stop Me Now"
-	]
-}
+		"Don't Stop Me Now",
+	],
+};

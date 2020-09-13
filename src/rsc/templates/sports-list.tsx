@@ -1,6 +1,6 @@
 import { PersistantList } from "@hooks/index";
 
-export const sports:PersistantList = {
+export const sports: PersistantList = {
 	name: "Sports",
 	type: "list",
 	collection: [
@@ -9,6 +9,6 @@ export const sports:PersistantList = {
 		"Basketball",
 		"Tennis",
 		"Hockey",
-		"Volleyball"
-	]
-}
+		"Volleyball",
+	],
+};

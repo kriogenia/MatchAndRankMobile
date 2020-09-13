@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from "react";
+import React, { FunctionComponent } from "react";
 import { Entry } from "@model/index";
 import { styles } from "./rank-header.style";
 import { View } from "react-native/index";
@@ -10,14 +10,19 @@ import Share, { Options } from "react-native-share/index";
 type RankHeaderProps = {
 	name: string;
 	result: Entry[];
+	capture: string;
 };
 
-const options = [
+const buttons = [
 	{ key: "rank", icon: "format-list-numbered" },
 	{ key: "list", icon: "format-list-bulleted" },
 ];
 
-const RankHeader: FunctionComponent<RankHeaderProps> = ({ name, result }) => {
+const RankHeader: FunctionComponent<RankHeaderProps> = ({
+	name,
+	result,
+	capture,
+}) => {
 	const { t } = useTranslation();
 
 	const list: PersistantList = {
@@ -28,7 +33,7 @@ const RankHeader: FunctionComponent<RankHeaderProps> = ({ name, result }) => {
 
 	let counter = 0;
 	const rankString =
-		`${t("RANK.rank_of")} ${name}:\n` +
+		`${t("RANK.rank_of")} ${name} ${t("RANK.generated")}:\n` +
 		result.map((entry) => `${++counter}. ${entry.name}`).join("\n");
 
 	const share = async (key: string) => {
@@ -37,7 +42,7 @@ const RankHeader: FunctionComponent<RankHeaderProps> = ({ name, result }) => {
 				message: key === "list" ? JSON.stringify(list) : rankString,
 			};
 			if (key === "rank") {
-				options.url = "";
+				options.url = capture;
 			}
 			await Share.open(options);
 		} catch (e) {
@@ -51,11 +56,11 @@ const RankHeader: FunctionComponent<RankHeaderProps> = ({ name, result }) => {
 				<Title style={styles.title}>{name}</Title>
 			</View>
 			<Caption style={styles.button}>{t("RANK.share")}</Caption>
-			{options.map((o) => (
+			{buttons.map((b) => (
 				<IconButton
-					key={o.key}
-					icon={o.icon}
-					onPress={() => share(o.key)}
+					key={b.key}
+					icon={b.icon}
+					onPress={() => share(b.key)}
 					style={styles.button}
 				/>
 			))}

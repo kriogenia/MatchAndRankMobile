@@ -31,7 +31,7 @@ const SettingsScreen: FunctionComponent<DrawerContentComponentProps<
 			navigation.navigate(route);
 		}
 	};
-	
+
 	return (
 		<DrawerContentScrollView>
 			<UserContextConsumer>

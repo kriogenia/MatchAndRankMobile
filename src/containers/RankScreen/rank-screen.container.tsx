@@ -23,6 +23,7 @@ const RankScreen: FunctionComponent<RankScreenProps> = ({
 	},
 	navigation,
 }) => {
+	const [capture, setCapture] = useState<string>("");
 	const [result, setResult] = useState<IEntry[]>(system.getResults());
 	const [saved, setSaved] = useState<boolean>(false);
 
@@ -33,8 +34,8 @@ const RankScreen: FunctionComponent<RankScreenProps> = ({
 
 	return (
 		<View style={styles.layout}>
-			<RankHeader name={system.name} result={result} />
-			<RankList results={result} />
+			<RankHeader name={system.name} result={result} capture={capture} />
+			<RankList results={result} setCapture={setCapture} />
 			<SaveRankButton
 				name={system.name}
 				result={result}
