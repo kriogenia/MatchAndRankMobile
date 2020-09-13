@@ -6,6 +6,7 @@ import { Caption, Title, IconButton } from "react-native-paper";
 import { PersistantList } from "@hooks/index";
 import { useTranslation } from "react-i18next";
 import Share, { Options } from "react-native-share/index";
+import { DownloadRankButton } from "@components/index";
 
 type RankHeaderProps = {
 	name: string;
@@ -39,6 +40,7 @@ const RankHeader: FunctionComponent<RankHeaderProps> = ({
 	const share = async (key: string) => {
 		try {
 			const options: Options = {
+				filename: name,
 				message: key === "list" ? JSON.stringify(list) : rankString,
 			};
 			if (key === "rank") {
@@ -56,6 +58,7 @@ const RankHeader: FunctionComponent<RankHeaderProps> = ({
 				<Title style={styles.title}>{name}</Title>
 			</View>
 			<Caption style={styles.button}>{t("RANK.share")}</Caption>
+			<DownloadRankButton tag={capture} style={styles.button} />
 			{buttons.map((b) => (
 				<IconButton
 					key={b.key}

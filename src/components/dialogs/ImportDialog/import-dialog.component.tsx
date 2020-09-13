@@ -2,7 +2,7 @@ import React, { FunctionComponent, useState } from "react";
 import { Portal, Dialog, TextInput, Button } from "react-native-paper";
 import { ScrollView } from "react-native-gesture-handler";
 import { useTranslation } from "react-i18next";
-import { PersistantList } from "@hooks/index";
+import { PersistantList, useConversor } from "@hooks/index";
 
 type ImportDialogProps = {
 	isVisible: boolean;
@@ -21,15 +21,16 @@ const ImportDialog: FunctionComponent<ImportDialogProps> = ({
 }) => {
 	const [input, setInput] = useState("");
 
+	const { getList } = useConversor();
 	const { t } = useTranslation();
 
 	const handleImport = () => {
 		try {
-			let imported: PersistantList = JSON.parse(input);
+			let imported: PersistantList = getList(input);
 			setList(imported.collection);
 			setName(imported.name);
 		} catch (error) {
-			setAlert(t("ERROR.import_list"));
+			setAlert(t(`ERROR.${error}`));
 		} finally {
 			onDismiss();
 		}

@@ -1,6 +1,7 @@
 import {
 	AuthButton,
 	ClearButton,
+	DownloadRankButton,
 	ImportButton,
 	LoadButton,
 	MatchButton,
@@ -32,6 +33,7 @@ export {
 	ClearButton,
 	ConfirmDialog,
 	DarkModeSwitch,
+	DownloadRankButton,
 	EntriesList,
 	ImportButton,
 	ImportDialog,

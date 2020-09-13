@@ -11,8 +11,11 @@
 	},
 	"ERROR": {
 		"confirm_clear": "This will clear the whole list, are you sure?",
+		"bad_format": "The imported list has format errors",
 		"duplicated_entry": "Entries can't be repeated",
+		"empty_entry": "An entry can't be empty",
 		"import_list": "There was a problem importing that list, are you sure the text is correctly formatted?",
+		"invalid_name": "The name of the list is invalid",
 		"minimum_entries": "You need at least three entries to start",
 		"save_file_name": "Specify a name for the list"
 	},
@@ -54,6 +57,8 @@
 		"rank_of": "Ranking of",
 		"restart": "Restart",
 		"save": "Save rank",
+		"store": "Store ranking on camera roll",
+		"store_succesful": "Image saved successfully",
 		"share": "Share"
 	},
 	"SETTINGS": {

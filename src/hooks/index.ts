@@ -1,4 +1,9 @@
 import {
+	ListConversor,
+	useConversor,
+} from "./ListConversor/list-conversor.hook";
+
+import {
 	PersistantList,
 	PersistantRank,
 	StorageManager,
@@ -12,5 +17,12 @@ import {
 	UserContextProvider,
 } from "./UserContextProvider/user-info.context";
 
-export { StorageManager, UserContextConsumer, UserContextProvider, useStorage };
+export {
+	ListConversor,
+	StorageManager,
+	UserContextConsumer,
+	UserContextProvider,
+	useConversor,
+	useStorage,
+};
 export type { PersistantList, PersistantRank, UserConsumerProps, UserContext };
