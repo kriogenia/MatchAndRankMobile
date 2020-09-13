@@ -5,12 +5,14 @@
 		"close": "Close",
 		"confirm": "Confirm",
 		"copy": "Copy",
+		"import": "Import",
 		"next": "Next",
 		"ok": "Ok"
 	},
 	"ERROR": {
 		"confirm_clear": "This will clear the whole list, are you sure?",
 		"duplicated_entry": "Entries can't be repeated",
+		"import_list": "There was a problem importing that list, are you sure the text is correctly formatted?",
 		"minimum_entries": "You need at least three entries to start",
 		"save_file_name": "Specify a name for the list"
 	},
@@ -50,7 +52,8 @@
 		"copy_to_clipboard": "Copy to clipboard",
 		"rank_of": "Ranking of",
 		"restart": "Restart",
-		"save": "Save rank"
+		"save": "Save rank",
+		"share": "Share"
 	},
 	"SETTINGS": {
 		"change_language": "Change language",
@@ -62,6 +65,7 @@
 	"START": {
 		"add": "Add",
 		"clear": "Clear",
+		"copy_exported_list": "Copy the list to import here",
 		"expected_matches": "Expected matches: ",
 		"import": "Import",
 		"load": "Load",

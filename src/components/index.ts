@@ -10,7 +10,12 @@ import {
 	SettingsButton,
 	StartButton,
 } from "./buttons";
-import { AlertDialog, ConfirmDialog, CopyDialog, LoadDialog } from "./dialogs";
+import {
+	AlertDialog,
+	ConfirmDialog,
+	ImportDialog,
+	LoadDialog,
+} from "./dialogs";
 import { NameInput } from "./forms";
 import { EntriesList, ListsAccordion, RankList, RanksAccordion } from "./lists";
 import {
@@ -26,10 +31,10 @@ export {
 	AuthButton,
 	ClearButton,
 	ConfirmDialog,
-	CopyDialog,
 	DarkModeSwitch,
 	EntriesList,
 	ImportButton,
+	ImportDialog,
 	LanguagePicker,
 	ListsAccordion,
 	LoadButton,
